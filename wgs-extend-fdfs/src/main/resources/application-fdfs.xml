@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.2.xsd">
+	
+	
+	<!--fdfs服务器配置初始化-->
+<<<<<<< HEAD
+	<bean id="fdfsInit" class="com.wgs.extend.fdfs.FdfsInit" init-method="init">
+		<property name="antiStealToken" value="${wgs.extend.fdfs.antiStealToken}" />
+		<property name="charSet" value="${wgs.extend.fdfs.charset}" />
+		<property name="connectTimeout" value="${wgs.extend.fdfs.connectTimeout}" />
+		<property name="networkTimeout" value="${wgs.extend.fdfs.networkTimeout}" />
+		<property name="httpSecretKey" value="${wgs.extend.fdfs.httpSecretKey}" />
+		<property name="trackerHttpPort" value="${wgs.extend.fdfs.trackerHttpPort}" />
+		<property name="trackerServers" value="${wgs.extend.fdfs.trackerServers}" />
+=======
+	<bean id="fdfsInit" class="com.eaju.extend.fastdfs.FdfsInit" init-method="init">
+		<property name="antiStealToken" value="${eaju.fastdfs.http_anti_steal_token}" />
+		<property name="charSet" value="${eaju.fastdfs.charset}" />
+		<property name="connectTimeout" value="${eaju.fastdfs.connect_timeout_in_seconds}" />
+		<property name="networkTimeout" value="${eaju.fastdfs.network_timeout_in_seconds}" />
+		<property name="httpSecretKey" value="${eaju.fastdfs.http_secret_key}" />
+		<property name="trackerHttpPort" value="${eaju.fastdfs.http_tracker_http_port}" />
+		<property name="trackerServers" value="${eaju.fastdfs.tracker_servers}" />
+>>>>>>> a58f1eb481476ee6ee14e24d91025442b0a10fca
+	</bean>
+	<!--client对象-->
+	<bean id="trackerClient" class="org.csource.fastdfs.TrackerClient" depends-on="fdfsInit"/>
+	<!--tracker连接工厂-->
+<<<<<<< HEAD
+	<bean id="trackerServerFactory" class="com.wgs.extend.fdfs.TrackerServerFactory"  >
+		<constructor-arg ref="trackerClient" />
+	</bean>
+	<!--tracker连接池配置-->
+	<bean id="genericObjectPoolConfig" class="org.apache.commons.pool2.impl.GenericObjectPoolConfig">
+		<property name="minIdle" value="${wgs.extend.object_pool.minIdle}" />
+		<property name="maxIdle" value="${wgs.extend.object_pool.maxIdle}" />
+		<property name="maxTotal" value="${wgs.extend.object_pool.maxTotal}" />
+		<property name="testOnCreate" value="${wgs.extend.object_pool.testOnCreate}" />
+		<property name="testOnBorrow" value="${wgs.extend.object_pool.testOnBorrow}" />
+		<property name="testOnReturn" value="${wgs.extend.object_pool.testOnReturn}" />
+		<property name="testWhileIdle" value="${wgs.extend.object_pool.testWhileIdle}" />
+		<property name="blockWhenExhausted" value="${wgs.extend.object_pool.blockWhenExhausted}"/>
+		<property name="maxWaitMillis" value="${wgs.extend.object_pool.maxWaitMillis}" />
+		<property name="minEvictableIdleTimeMillis" value="${wgs.extend.object_pool.minEvicTime}" />
+		<property name="timeBetweenEvictionRunsMillis" value="${wgs.extend.object_pool.timeBetEvicRun}" />
+		<!-- jmx监控 生产环境不开启 -->
+		<!--<property name="jmxEnabled" value="${wgs.extend.object_pool.jmxEnabled}" />-->
+=======
+	<bean id="trackerServerFactory" class="com.eaju.extend.fastdfs.TrackerServerFactory"  />
+	<!--tracker连接池配置-->
+	<bean id="genericObjectPoolConfig" class="org.apache.commons.pool2.impl.GenericObjectPoolConfig">
+		<property name="minIdle" value="${eaju.object_pool.minIdle}" />
+		<property name="maxIdle" value="${eaju.object_pool.maxIdle}" />
+		<property name="maxTotal" value="${eaju.object_pool.maxTotal}" />
+		<property name="testOnCreate" value="${eaju.object_pool.testOnCreate}" />
+		<property name="testOnBorrow" value="${eaju.object_pool.testOnBorrow}" />
+		<property name="testOnReturn" value="${eaju.object_pool.testOnReturn}" />
+		<property name="testWhileIdle" value="${eaju.object_pool.testWhileIdle}" />
+		<property name="blockWhenExhausted" value="${eaju.object_pool.blockWhenExhausted}"/>
+		<property name="maxWaitMillis" value="${eaju.object_pool.maxWaitMillis}" />
+		<property name="minEvictableIdleTimeMillis" value="${eaju.object_pool.minEvicTime}" />
+		<property name="timeBetweenEvictionRunsMillis" value="${eaju.object_pool.timeBetEvicRun}" />
+		<!-- jmx监控 生产环境不开启 -->
+		<!--<property name="jmxEnabled" value="${eaju.object_pool.jmxEnabled}" />-->
+>>>>>>> a58f1eb481476ee6ee14e24d91025442b0a10fca
+	</bean>
+	<!--tracker连接池-->
+	<bean id="trackerServerPool" class="org.apache.commons.pool2.impl.GenericObjectPool">
+		<constructor-arg ref="trackerServerFactory" />
+		<constructor-arg ref="genericObjectPoolConfig" />
+	</bean>
+	
+	<!--操作客户端-->
+<<<<<<< HEAD
+	<bean id="fastDFSClient" class="com.wgs.extend.fdfs.FastDFSClient">
+		<constructor-arg ref="trackerServerPool" />
+	</bean>
+=======
+	<bean id="fastDFSClient" class="com.eaju.extend.fastdfs.FastDFSClient" />
+>>>>>>> a58f1eb481476ee6ee14e24d91025442b0a10fca
+</beans>

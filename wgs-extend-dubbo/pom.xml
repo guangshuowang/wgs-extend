@@ -2,19 +2,30 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<parent>
-		<artifactId>wgs-extend-lock</artifactId>
+		<artifactId>wgs-extend</artifactId>
 		<groupId>com.wgs.extend</groupId>
 		<version>1.0-SNAPSHOT</version>
 	</parent>
 	<modelVersion>4.0.0</modelVersion>
-	<packaging>jar</packaging>
-	<artifactId>wgs-extend-lock-zookeeper</artifactId>
+	
+	<artifactId>wgs-extend-dubbo</artifactId>
 
+
+<<<<<<< HEAD
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter</artifactId>
-			<optional>true</optional>
+			<exclusions>
+				<exclusion>
+					<artifactId>logback-classic</artifactId>
+					<groupId>ch.qos.logback</groupId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-aop</artifactId>
 		</dependency>
 		<dependency>
 			<groupId>com.wgs.extend</groupId>
@@ -22,14 +33,17 @@
 			<version>1.0-SNAPSHOT</version>
 		</dependency>
 		<dependency>
-			<groupId>org.apache.curator</groupId>
-			<artifactId>curator-framework</artifactId>
-			<version>4.2.0</version>
+			<groupId>org.apache.directory.studio</groupId>
+			<artifactId>org.slf4j.api</artifactId>
+			<version>1.7.2</version>
 		</dependency>
+		
 		<dependency>
-			<groupId>org.apache.curator</groupId>
-			<artifactId>curator-recipes</artifactId>
-			<version>4.2.0</version>
+			<groupId>org.apache.dubbo</groupId>
+			<artifactId>dubbo</artifactId>
+			<version>2.7.6</version>
 		</dependency>
 	</dependencies>
+=======
+>>>>>>> a58f1eb481476ee6ee14e24d91025442b0a10fca
 </project>

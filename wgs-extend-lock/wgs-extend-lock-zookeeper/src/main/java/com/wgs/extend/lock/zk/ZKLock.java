@@ -1,5 +1,6 @@
 package com.wgs.extend.lock.zk;
 
+import com.wgs.extend.common.utils.StringUtils;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.curator.framework.CuratorFramework;
 import org.apache.curator.framework.CuratorFrameworkFactory;
@@ -8,7 +9,6 @@ import org.apache.curator.retry.ExponentialBackoffRetry;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.stereotype.Component;
-import org.springframework.util.StringUtils;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -30,7 +30,7 @@ public class ZKLock {
 	/**
 	 * zookeeper上锁的根目录路径，要以/结尾
 	 */
-	@Value("${wgs.extend.lock.path:/distributed-lock/}")
+//	@Value("${wgs.extend.lock.path:/distributed-lock/}")
 	private String lockPath;
 	private CuratorFramework client;
 
@@ -51,7 +51,11 @@ public class ZKLock {
 	 */
 	private final InheritableThreadLocal<Map<String, InterProcessMutex>> threadLocalMulti = new InheritableThreadLocal<>();
 
-	public ZKLock(@Value("${zookeeper.registry.address}") String url) {
+	public ZKLock() {
+	}
+
+	public ZKLock(String url, String lockPath) {
+		this.lockPath = lockPath;
 		client= CuratorFrameworkFactory.builder().connectString(url)
 				.sessionTimeoutMs(5000).retryPolicy(new ExponentialBackoffRetry(1000, 3)).build();
 		client.start();

@@ -2,21 +2,38 @@
 #spring.datasource.username=root
 #spring.datasource.password=anbang@123
 
-#spring.dubbo.application.name=demo
-#spring.dubbo.registry.address=172.20.32.252:2181
-#spring.dubbo.protocol.name=dubbo
-#spring.dubbo.protocol.port=20880
-#spring.dubbo.scan=com.eaju.system.api
-
-#wgs.extend.lock.path=/distributed-lock/
-
 server:
   port: 8080
 
 spring:
   application:
     name: wgs-extend-demo
-  dubbo:
-    registry:
-      address: 172.20.32.252:2181
 
+wgs:
+  extend:
+    object_pool:
+      minIdle: 0
+      maxIdle: 8
+      maxTotal: 32
+      testOnCreate: false
+      testOnBorrow: true
+      testOnReturn: false
+      testWhileIdle: true
+      blockWhenExhausted: true
+      maxWaitMillis: 5000
+      minEvicTime: 60000
+      timeBetEvicRun: 300000
+    fdfs:
+      charSet: UTF-8
+      trackerServers: 172.20.32.252:22122,172.20.32.252:22122
+      trackerHttpPort: 80
+      connectTimeout: 10000
+      networkTimeout: 30000
+      antiStealToken: false
+      httpSecretKey: FastDFS1234567890
+    lock:
+      zk:
+        url: 172.20.32.252:2181
+        lockPath: /distributed-lock/
+      redis:
+        url: redis://172.20.32.252:6379

@@ -1,12 +1,11 @@
 package com.wgs.extend.demo.config;
 
+import com.wgs.extend.lock.redis.RedisLock;
 import com.wgs.extend.lock.zk.ZKLock;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.core.env.Environment;
 
 /**
  * @Description
@@ -22,13 +21,23 @@ public class LockConfigration {
 //	@Autowired
 //	private Environment environment;
 
-	@Value("${spring.dubbo.registry.address}")
+	@Value("${wgs.extend.lock.zk.url}")
 	private String url;
+	@Value("${wgs.extend.lock.zk.lockPath}")
+	private String lockPath;
+	@Value("${wgs.extend.lock.redis.url}")
+	private String redisUrl;
 
 	@Bean
-	public ZKLock initLock() {
+	public ZKLock initZKLock() {
 //		String url = environment.getProperty("spring.dubbo.registry.address");
 		log.info("初始化lock，zk地址：{}", url);
-		return new ZKLock(url);
+		return new ZKLock(url, lockPath);
+	}
+	@Bean
+	public RedisLock initRedisLock() {
+//		String url = environment.getProperty("spring.dubbo.registry.address");
+		log.info("初始化lock，redis地址：{}", redisUrl);
+		return new RedisLock(redisUrl);
 	}
 }
