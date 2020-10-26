@@ -2,66 +2,22 @@
  * Copyright(c) 2004-2018 eaju.com, All Rights Reserved. Project: eaju-marketing-service Author: admin Createdate:
  * 下午5:47:49 Version: 1.0
  */
-<<<<<<< HEAD
-<<<<<<< HEAD
 package com.wgs.extend.dubbo.tracelog.aop;
 
 import com.wgs.extend.common.utils.DateUtils;
 import com.wgs.extend.dubbo.tracelog.ThreadMdcUtil;
-=======
-=======
->>>>>>> a58f1eb481476ee6ee14e24d91025442b0a10fca
-package com.eaju.extend.tracelog.aop;
-
-import com.alibaba.fastjson.JSON;
-import com.eaju.common.entity.result.ModelListResult;
-import com.eaju.common.entity.result.ModelResult;
-import com.eaju.common.entity.result.ResponseResult;
-import com.eaju.common.entity.result.Result;
-import com.eaju.common.entity.result.ResultSet;
-import com.eaju.common.utils.AESUtil;
-import com.eaju.common.utils.DateUtils;
-import com.eaju.extend.tracelog.ThreadMdcUtil;
-<<<<<<< HEAD
->>>>>>> a58f1eb481476ee6ee14e24d91025442b0a10fca
-=======
->>>>>>> a58f1eb481476ee6ee14e24d91025442b0a10fca
 import lombok.extern.slf4j.Slf4j;
 import org.apache.dubbo.rpc.RpcContext;
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.annotation.After;
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-import org.aspectj.lang.annotation.AfterReturning;
->>>>>>> a58f1eb481476ee6ee14e24d91025442b0a10fca
-=======
-import org.aspectj.lang.annotation.AfterReturning;
->>>>>>> a58f1eb481476ee6ee14e24d91025442b0a10fca
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
 import org.aspectj.lang.annotation.Pointcut;
 import org.springframework.core.annotation.Order;
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-import org.springframework.http.HttpStatus;
->>>>>>> a58f1eb481476ee6ee14e24d91025442b0a10fca
-=======
-import org.springframework.http.HttpStatus;
->>>>>>> a58f1eb481476ee6ee14e24d91025442b0a10fca
 import org.springframework.stereotype.Component;
 import org.springframework.util.StringUtils;
 
 import java.util.Date;
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-import java.util.Objects;
->>>>>>> a58f1eb481476ee6ee14e24d91025442b0a10fca
-=======
-import java.util.Objects;
->>>>>>> a58f1eb481476ee6ee14e24d91025442b0a10fca
 
 /**
  * 链路日志切面
@@ -77,34 +33,12 @@ import java.util.Objects;
 @Slf4j
 public abstract class TraceLogAspect {
 
-<<<<<<< HEAD
-<<<<<<< HEAD
 	@Pointcut("execution(* com.wgs.*.controller..*.*(..))")
 	public void controllerPointcut() {}
 
 	@Pointcut("execution(* com.wgs.*.service..*.*(..))")
 	public void servicePointcut() {}
 
-=======
-=======
->>>>>>> a58f1eb481476ee6ee14e24d91025442b0a10fca
-	@Pointcut("execution(* com.eaju.*.controller..*.*(..))")
-	public void controllerPointcut() {}
-
-	@Pointcut("execution(* com.eaju.*.service..*.*(..))")
-	public void servicePointcut() {}
-
-	/**
-	 * 加密接口切面
-	 */
-	@Pointcut("@annotation(com.eaju.common.annotation.AesApi)")
-	public void aesAspect() {}
-
-
-<<<<<<< HEAD
->>>>>>> a58f1eb481476ee6ee14e24d91025442b0a10fca
-=======
->>>>>>> a58f1eb481476ee6ee14e24d91025442b0a10fca
 	@Before("controllerPointcut()")
     public void controllerBefore(JoinPoint point) {
 		String attachment = RpcContext.getContext().getAttachment(ThreadMdcUtil.LOG_TRACE_ID);
@@ -153,53 +87,4 @@ public abstract class TraceLogAspect {
 
 	public abstract void saveControllerTraceLog(String className, String methodName, long time);
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> a58f1eb481476ee6ee14e24d91025442b0a10fca
-
-
-
-    /**
-     *
-     * 接口返回数据加密处理
-     * @Author  wanggsh
-     * @Date    2020-08-14 10:26
-     * @Version 1.0
-     */
-	@AfterReturning(returning = "result", pointcut = "aesAspect()")
-	public void afterReturning(JoinPoint joinPoint, Object result) throws Exception {
-		if (result instanceof ModelListResult) {
-			ModelListResult modelListResult = (ModelListResult) result;
-			if (ResultSet.SUCCESS.equals(modelListResult.getCode()) && !Objects.isNull(modelListResult.getModel())) {
-				log.info("ModelListResult加密处理");
-				modelListResult.setModel(AESUtil.encrypt(JSON.toJSONString(modelListResult.getModel()).getBytes(), AESUtil.key.getBytes(), AESUtil.generateIV(AESUtil.iv.getBytes())));
-			}
-		} else if (result instanceof ModelResult) {
-			ModelResult model = (ModelResult) result;
-			if (ResultSet.SUCCESS.equals(model.getCode()) && !Objects.isNull(model.getModel())) {
-				log.info("ModelResult加密处理");
-				model.setModel(AESUtil.encrypt(JSON.toJSONString(model.getModel()).getBytes(), AESUtil.key.getBytes(), AESUtil.generateIV(AESUtil.iv.getBytes())));
-			}
-		} else if (result instanceof Result) {
-			Result res = (Result) result;
-			if (Objects.equals(HttpStatus.OK.value(), res.getCode()) && !Objects.isNull(res.getResult())) {
-				log.info("Result加密处理");
-				res.setResult(AESUtil.encrypt(JSON.toJSONString(res.getResult()).getBytes(), AESUtil.key.getBytes(), AESUtil.generateIV(AESUtil.iv.getBytes())));
-			}
-		} else if (result instanceof ResponseResult) {
-			ResponseResult response = (ResponseResult) result;
-			if (Objects.equals(HttpStatus.OK.value(), response.getReturnCode()) && !Objects.isNull(response.getData())) {
-				log.info("ResponseResult加密处理");
-				response.setData(AESUtil.encrypt(JSON.toJSONString(response.getData()).getBytes(), AESUtil.key.getBytes(), AESUtil.generateIV(AESUtil.iv.getBytes())));
-			}
-		} else {
-			log.error("无对应加密结果类型");
-		}
-	}
-<<<<<<< HEAD
->>>>>>> a58f1eb481476ee6ee14e24d91025442b0a10fca
-=======
->>>>>>> a58f1eb481476ee6ee14e24d91025442b0a10fca
 }

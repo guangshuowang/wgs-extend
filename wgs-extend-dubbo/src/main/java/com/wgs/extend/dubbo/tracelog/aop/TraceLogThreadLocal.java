@@ -1,12 +1,4 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
 package com.wgs.extend.dubbo.tracelog.aop;
-=======
-package com.eaju.extend.tracelog.aop;
->>>>>>> a58f1eb481476ee6ee14e24d91025442b0a10fca
-=======
-package com.eaju.extend.tracelog.aop;
->>>>>>> a58f1eb481476ee6ee14e24d91025442b0a10fca
 
 import java.util.Date;
 

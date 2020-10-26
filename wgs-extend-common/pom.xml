@@ -7,8 +7,6 @@
 		<version>1.0-SNAPSHOT</version>
 	</parent>
 	<modelVersion>4.0.0</modelVersion>
-<<<<<<< HEAD
-<<<<<<< .merge_file_a94672
 	<packaging>jar</packaging>
 	<artifactId>wgs-extend-common</artifactId>
 
@@ -19,15 +17,4 @@
 			<artifactId>commons-lang3</artifactId>
 		</dependency>
 	</dependencies>
-=======
-=======
->>>>>>> a58f1eb481476ee6ee14e24d91025442b0a10fca
-	
-	<artifactId>wgs-extend-common</artifactId>
-
-
-<<<<<<< HEAD
->>>>>>> .merge_file_a41616
-=======
->>>>>>> a58f1eb481476ee6ee14e24d91025442b0a10fca
 </project>

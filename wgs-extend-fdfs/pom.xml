@@ -12,50 +12,37 @@
 
 	
 	<dependencies>
+		<!--<dependency>-->
+			<!--<groupId>org.springframework.boot</groupId>-->
+			<!--<artifactId>spring-boot-starter</artifactId>-->
+			<!--<optional>true</optional>-->
+		<!--</dependency>-->
 		<dependency>
-<<<<<<< HEAD
-<<<<<<< HEAD
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
 			<optional>true</optional>
 		</dependency>
 		<!--对象池-->
 		<dependency>
-=======
->>>>>>> a58f1eb481476ee6ee14e24d91025442b0a10fca
-=======
->>>>>>> a58f1eb481476ee6ee14e24d91025442b0a10fca
 			<groupId>org.apache.commons</groupId>
 			<artifactId>commons-pool2</artifactId>
 			<version>2.6.1</version>
 		</dependency>
 		<dependency>
-<<<<<<< HEAD
-<<<<<<< HEAD
 			<groupId>commons-codec</groupId>
 			<artifactId>commons-codec</artifactId>
 		</dependency>
 		<!--fdfs客户端-->
 		<dependency>
-=======
->>>>>>> a58f1eb481476ee6ee14e24d91025442b0a10fca
-=======
->>>>>>> a58f1eb481476ee6ee14e24d91025442b0a10fca
 			<groupId>net.oschina.zcx7878</groupId>
 			<artifactId>fastdfs-client-java</artifactId>
 			<version>1.27.0.0</version>
 		</dependency>
-<<<<<<< HEAD
-<<<<<<< HEAD
 		<dependency>
 			<groupId>com.wgs.extend</groupId>
 			<artifactId>wgs-extend-common</artifactId>
 			<version>1.0-SNAPSHOT</version>
 		</dependency>
-=======
->>>>>>> a58f1eb481476ee6ee14e24d91025442b0a10fca
-=======
->>>>>>> a58f1eb481476ee6ee14e24d91025442b0a10fca
 	</dependencies>
 
 </project>

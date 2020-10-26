@@ -1,20 +1,7 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
 package com.wgs.extend.dubbo.tracelog.filter;
 
 import com.wgs.extend.common.utils.DateUtils;
 import com.wgs.extend.dubbo.tracelog.ThreadMdcUtil;
-=======
-=======
->>>>>>> a58f1eb481476ee6ee14e24d91025442b0a10fca
-package com.eaju.extend.tracelog.filter;
-
-import com.eaju.common.utils.DateUtils;
-import com.eaju.extend.tracelog.ThreadMdcUtil;
-<<<<<<< HEAD
->>>>>>> a58f1eb481476ee6ee14e24d91025442b0a10fca
-=======
->>>>>>> a58f1eb481476ee6ee14e24d91025442b0a10fca
 import lombok.extern.slf4j.Slf4j;
 import org.apache.dubbo.common.extension.Activate;
 import org.apache.dubbo.rpc.Filter;

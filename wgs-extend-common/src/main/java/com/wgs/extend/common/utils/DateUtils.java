@@ -1,31 +1,15 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
 package com.wgs.extend.common.utils;
 
-=======
-package com.eaju.common.utils;
->>>>>>> a58f1eb481476ee6ee14e24d91025442b0a10fca
-=======
-package com.eaju.common.utils;
->>>>>>> a58f1eb481476ee6ee14e24d91025442b0a10fca
 
 import org.apache.commons.lang3.time.DateFormatUtils;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-<<<<<<< HEAD
-<<<<<<< HEAD
 import java.time.format.DateTimeFormatter;
-=======
->>>>>>> a58f1eb481476ee6ee14e24d91025442b0a10fca
-=======
->>>>>>> a58f1eb481476ee6ee14e24d91025442b0a10fca
 import java.util.Calendar;
 import java.util.Date;
 
 public class DateUtils {
-<<<<<<< HEAD
-<<<<<<< HEAD
 
 
 	private static String[] parsePatterns = {
@@ -33,12 +17,6 @@ public class DateUtils {
 			"yyyy/MM/dd", "yyyy/MM/dd HH:mm:ss", "yyyy/MM/dd HH:mm", "yyyy/MM",
 			"yyyy.MM.dd", "yyyy.MM.dd HH:mm:ss", "yyyy.MM.dd HH:mm", "yyyy.MM"};
 
-=======
-	
->>>>>>> a58f1eb481476ee6ee14e24d91025442b0a10fca
-=======
-	
->>>>>>> a58f1eb481476ee6ee14e24d91025442b0a10fca
 	/**
 	 * 判断时间是否在时间段内
 	 * @param nowTime
@@ -62,93 +40,6 @@ public class DateUtils {
 			return false;
 		}
 	}
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> a58f1eb481476ee6ee14e24d91025442b0a10fca
-	/**
-	 * 当前时间后移   n天 n小时  n分   n秒
-	 * @方法名: timeDate  
-	 * @功能描述: (这里用一句话描述这个方法的作用)
-	 * @param hour
-	 * @param minute
-	 * @param second
-	 * @return
-	 * @作者  GYF
-	 * @日期 2018年9月27日
-	 */
-	public static Date timeDate(Integer hour, Integer minute, Integer second,Calendar nowTime){
-		
-		//Calendar nowTime = Calendar.getInstance();
-		
-		nowTime.add(Calendar.HOUR, hour);
-		nowTime.add(Calendar.MINUTE, minute);
-		nowTime.add(Calendar.SECOND, second);
-		
-		Date time = nowTime.getTime();
-		
-		return time;
-	}
-
-	public static String timeStamp(String seconds){
-		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-		String substring = seconds.substring(0, 10)+"000";
-		return sdf.format(new Date(Long.valueOf(substring)));
-	}
-
-	public static Date timeStampDate(String seconds){
-		String substring = seconds.substring(0, 10)+"000";
-		return new Date(Long.valueOf(substring));
-	}
-
-	/**
-	 * 时间戳转换为日期
-	 * @方法名: timeStampDate  
-	 * @功能描述: (这里用一句话描述这个方法的作用)
-	 * @param seconds
-	 * @param format
-	 * @return
-	 * @作者  GYF
-	 * @日期 2018年9月13日
-	 */
-	public static String timeStampDate(String seconds,String format) {
-		 
-        if(seconds == null || seconds.isEmpty() || seconds.equals("null")){  
-             return "";  
-         }  
-         if(format == null || format.isEmpty()){
-            format = "yyyy-MM-dd HH:mm:ss";
-         }   
-        SimpleDateFormat sdf = new SimpleDateFormat(format);  
-       return sdf.format(new Date(Long.valueOf(seconds+"000")));  
-    }
-	/**返回日期 2018年10月12日  10:50
-	 * 
-	 * @方法名: timeString  
-	 * @功能描述: (这里用一句话描述这个方法的作用)
-	 * @return
-	 * @作者  GYF
-	 * @日期 2018年10月12日
-	 */
-	public static String timeString(){
-		SimpleDateFormat sdf = new SimpleDateFormat("yyyy年MM月dd日 HH:mm");
-		String seconds = System.currentTimeMillis()+"";
-		String substring = seconds.substring(0, 10)+"000";
-		return sdf.format(new Date(Long.valueOf(substring)));
-	}
-
-
-
-
-	private static String[] parsePatterns = {
-			"yyyy-MM-dd", "yyyy-MM-dd HH:mm:ss", "yyyy-MM-dd HH:mm", "yyyy-MM",
-			"yyyy/MM/dd", "yyyy/MM/dd HH:mm:ss", "yyyy/MM/dd HH:mm", "yyyy/MM",
-			"yyyy.MM.dd", "yyyy.MM.dd HH:mm:ss", "yyyy.MM.dd HH:mm", "yyyy.MM"};
-<<<<<<< HEAD
->>>>>>> a58f1eb481476ee6ee14e24d91025442b0a10fca
-=======
->>>>>>> a58f1eb481476ee6ee14e24d91025442b0a10fca
 
 	/**
 	 * 得到当前日期字符串 格式（yyyy-MM-dd）
@@ -167,25 +58,8 @@ public class DateUtils {
 	/**
 	 * 得到日期字符串 默认格式（yyyy-MM-dd） pattern可以为："yyyy-MM-dd" "HH:mm:ss" "E"
 	 */
-<<<<<<< HEAD
-<<<<<<< HEAD
 	private static String formatDate(Date date, String pattern) {
-		return DateFormatUtils.format(date, pattern);
-=======
-=======
->>>>>>> a58f1eb481476ee6ee14e24d91025442b0a10fca
-	public static String formatDate(Date date, Object... pattern) {
-		String formatDate = null;
-		if (pattern != null && pattern.length > 0) {
-			formatDate = DateFormatUtils.format(date, pattern[0].toString());
-		} else {
-			formatDate = DateFormatUtils.format(date, "yyyy-MM-dd");
-		}
-		return formatDate;
-<<<<<<< HEAD
->>>>>>> a58f1eb481476ee6ee14e24d91025442b0a10fca
-=======
->>>>>>> a58f1eb481476ee6ee14e24d91025442b0a10fca
+		return DateFormatUtils.format(date, "yyyy-MM-dd");
 	}
 
 	/**
@@ -238,32 +112,6 @@ public class DateUtils {
 	}
 
 	/**
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> a58f1eb481476ee6ee14e24d91025442b0a10fca
-	 * 日期型字符串转化为日期 格式
-	 * { "yyyy-MM-dd", "yyyy-MM-dd HH:mm:ss", "yyyy-MM-dd HH:mm",
-	 *   "yyyy/MM/dd", "yyyy/MM/dd HH:mm:ss", "yyyy/MM/dd HH:mm",
-	 *   "yyyy.MM.dd", "yyyy.MM.dd HH:mm:ss", "yyyy.MM.dd HH:mm" }
-	 */
-	public static Date parseDate(Object str) {
-		if (str == null){
-			return null;
-		}
-		try {
-			return org.apache.commons.lang3.time.DateUtils.parseDate(str.toString(), parsePatterns);
-		} catch (ParseException e) {
-			return null;
-		}
-	}
-
-	/**
-<<<<<<< HEAD
->>>>>>> a58f1eb481476ee6ee14e24d91025442b0a10fca
-=======
->>>>>>> a58f1eb481476ee6ee14e24d91025442b0a10fca
 	 * 获取过去的天数
 	 * @param date
 	 * @return

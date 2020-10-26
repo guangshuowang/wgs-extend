@@ -1,20 +1,6 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
 package com.wgs.extend.common.utils;
 
 
-=======
-=======
->>>>>>> a58f1eb481476ee6ee14e24d91025442b0a10fca
-package com.eaju.common.utils;
-
-
-import org.springframework.util.StringUtils;
-
-<<<<<<< HEAD
->>>>>>> a58f1eb481476ee6ee14e24d91025442b0a10fca
-=======
->>>>>>> a58f1eb481476ee6ee14e24d91025442b0a10fca
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -28,23 +14,7 @@ import java.util.regex.Pattern;
  * @类功能说明： String字符串工具类.
  */
 
-<<<<<<< HEAD
-<<<<<<< HEAD
 public final class StringUtils {
-=======
-=======
->>>>>>> a58f1eb481476ee6ee14e24d91025442b0a10fca
-public final class StringUtil {
-
-    /**
-     * 私有构造方法,将该工具类设为单例模式.
-     */
-    private StringUtil() {
-    }
-<<<<<<< HEAD
->>>>>>> a58f1eb481476ee6ee14e24d91025442b0a10fca
-=======
->>>>>>> a58f1eb481476ee6ee14e24d91025442b0a10fca
 
 	public static boolean isChinaMobile(String mobile) {
 		if(mobile == null){
@@ -80,97 +50,12 @@ public final class StringUtil {
 	}
 
     /**
-<<<<<<< HEAD
-<<<<<<< HEAD
      * 判断字符串是否为空
      */
     public static boolean isEmpty(String str) {
         return null == str || "".equals(str.trim()) || "null".equals(str) || "undefined".equals(str);
     }
 
-=======
-=======
->>>>>>> a58f1eb481476ee6ee14e24d91025442b0a10fca
-     * 函数功能说明 ： 判断字符串是否为空 . 修改者名字： 修改日期： 修改内容：
-     * 
-     * @参数： @param str
-     * @参数： @return
-     * @return boolean
-     * @throws
-     */
-    public static boolean isEmpty(String str) {
-        return null == str || "".equals(str);
-    }
-
-    /**
-     * 函数功能说明 ： 判断对象数组是否为空. 修改者名字： 修改日期： 修改内容：
-     * 
-     * @参数： @param obj
-     * @参数： @return
-     * @return boolean
-     * @throws
-     */
-    public static boolean isEmpty(Object[] obj) {
-        return null == obj || 0 == obj.length;
-    }
-
-    /**
-     * 函数功能说明 ： 判断对象是否为空. 修改者名字： 修改日期： 修改内容：
-     * 
-     * @参数： @param obj
-     * @参数： @return
-     * @return boolean
-     * @throws
-     */
-    public static boolean isEmpty(Object obj) {
-        if (null == obj) {
-            return true;
-        }
-        if (obj instanceof String) {
-            return ((String) obj).trim().isEmpty();
-        }
-        return !(obj instanceof Number) ? false : false;
-    }
-
-    /**
-     * 函数功能说明 ： 判断集合是否为空. 修改者名字： 修改日期： 修改内容：
-     * 
-     * @参数： @param obj
-     * @参数： @return
-     * @return boolean
-     * @throws
-     */
-    public static boolean isEmpty(List<?> obj) {
-        return null == obj || obj.isEmpty();
-    }
-
-    /**
-     * 函数功能说明 ： 判断Map集合是否为空. 修改者名字： 修改日期： 修改内容：
-     * 
-     * @参数： @param obj
-     * @参数： @return
-     * @return boolean
-     * @throws
-     */
-    public static boolean isEmpty(Map<?, ?> obj) {
-        return null == obj || obj.isEmpty();
-    }
-
-    /**
-     * 函数功能说明 ： 获得文件名的后缀名. 修改者名字： 修改日期： 修改内容：
-     * 
-     * @参数： @param fileName
-     * @参数： @return
-     * @return String
-     * @throws
-     */
-    public static String getExt(String fileName) {
-        return fileName.substring(fileName.lastIndexOf(".") + 1);
-    }
-<<<<<<< HEAD
->>>>>>> a58f1eb481476ee6ee14e24d91025442b0a10fca
-=======
->>>>>>> a58f1eb481476ee6ee14e24d91025442b0a10fca
 
     /**
      * 获取去掉横线的长度为32的UUID串.
@@ -182,14 +67,6 @@ public final class StringUtil {
     }
 
 	public static String get16UUID() {
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-//		return get32UUID().substring(0, 16);
->>>>>>> a58f1eb481476ee6ee14e24d91025442b0a10fca
-=======
-//		return get32UUID().substring(0, 16);
->>>>>>> a58f1eb481476ee6ee14e24d91025442b0a10fca
 		String uuid= UUID.randomUUID().toString();
 		char[] cs=new char[32];
 		char c=0;
@@ -218,62 +95,10 @@ public final class StringUtil {
      * @return true or false .
      */
     public static boolean isNumeric(String str) {
-<<<<<<< HEAD
-<<<<<<< HEAD
         if (isEmpty(str)) {
-=======
-        if (StringUtils.isEmpty(str)) {
->>>>>>> a58f1eb481476ee6ee14e24d91025442b0a10fca
-=======
-        if (StringUtils.isEmpty(str)) {
->>>>>>> a58f1eb481476ee6ee14e24d91025442b0a10fca
             return false;
         } else {
             return str.matches("\\d*");
         }
     }
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> a58f1eb481476ee6ee14e24d91025442b0a10fca
-
-    /**
-     * 计算采用utf-8编码方式时字符串所占字节数
-     * 
-     * @param content
-     * @return
-     */
-    public static int getByteSize(String content) {
-        int size = 0;
-        if (null != content) {
-			// 汉字采用utf-8编码时占3个字节
-			size = content.getBytes(StandardCharsets.UTF_8).length;
-		}
-        return size;
-    }
-
-    /**
-     * 函数功能说明 ： 截取字符串拼接in查询参数. 修改者名字： 修改日期： 修改内容：
-     * 
-     * @参数： @param ids
-     * @参数： @return
-     * @return String
-     * @throws
-     */
-    public static List<String> getInParam(String param) {
-        boolean flag = param.contains(",");
-        List<String> list = new ArrayList<String>();
-        if (flag) {
-            list = Arrays.asList(param.split(","));
-        } else {
-            list.add(param);
-        }
-        return list;
-    }
-
-<<<<<<< HEAD
->>>>>>> a58f1eb481476ee6ee14e24d91025442b0a10fca
-=======
->>>>>>> a58f1eb481476ee6ee14e24d91025442b0a10fca
 }

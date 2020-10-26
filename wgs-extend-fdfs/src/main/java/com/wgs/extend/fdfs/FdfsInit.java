@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
 package com.wgs.extend.fdfs;
 
 
@@ -8,20 +6,6 @@ import lombok.extern.slf4j.Slf4j;
 import org.csource.common.MyException;
 import org.csource.fastdfs.ClientGlobal;
 import org.springframework.boot.context.properties.ConfigurationProperties;
-=======
-=======
->>>>>>> a58f1eb481476ee6ee14e24d91025442b0a10fca
-package com.eaju.extend.fastdfs;
-
-
-import com.eaju.common.utils.StringUtil;
-import lombok.extern.slf4j.Slf4j;
-import org.csource.common.MyException;
-import org.csource.fastdfs.ClientGlobal;
-<<<<<<< HEAD
->>>>>>> a58f1eb481476ee6ee14e24d91025442b0a10fca
-=======
->>>>>>> a58f1eb481476ee6ee14e24d91025442b0a10fca
 
 import java.io.IOException;
 
@@ -34,13 +18,7 @@ import java.io.IOException;
  * @Version 1.0
  */
 @Slf4j
-<<<<<<< HEAD
-<<<<<<< HEAD
 @ConfigurationProperties(prefix = "wgs.extend.fdfs")
-=======
->>>>>>> a58f1eb481476ee6ee14e24d91025442b0a10fca
-=======
->>>>>>> a58f1eb481476ee6ee14e24d91025442b0a10fca
 public class FdfsInit {
 
 	private String charSet; //字符编码
@@ -52,8 +30,6 @@ public class FdfsInit {
 	private Integer networkTimeout; //网络超时时间
 
     public void init(){
-<<<<<<< HEAD
-<<<<<<< HEAD
 		if (!StringUtils.isEmpty(charSet)) {
 			ClientGlobal.setG_charset(charSet);
 		}
@@ -61,20 +37,6 @@ public class FdfsInit {
 			ClientGlobal.setG_secret_key(httpSecretKey);
 		}
 		if (!StringUtils.isEmpty(trackerServers) && trackerServers.trim().length() != 0) {
-=======
-=======
->>>>>>> a58f1eb481476ee6ee14e24d91025442b0a10fca
-		if (!StringUtil.isEmpty(charSet)) {
-			ClientGlobal.setG_charset(charSet);
-		}
-		if (!StringUtil.isEmpty(httpSecretKey)) {
-			ClientGlobal.setG_secret_key(httpSecretKey);
-		}
-		if (!StringUtil.isEmpty(trackerServers) && trackerServers.trim().length() != 0) {
-<<<<<<< HEAD
->>>>>>> a58f1eb481476ee6ee14e24d91025442b0a10fca
-=======
->>>>>>> a58f1eb481476ee6ee14e24d91025442b0a10fca
 			try {
 				ClientGlobal.initByTrackers(trackerServers.trim());
 			} catch (IOException e) {

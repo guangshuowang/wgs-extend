@@ -1,22 +1,8 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
 package com.wgs.extend.fdfs;
 
 import com.wgs.extend.common.utils.StringUtils;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.codec.binary.Base64;
-=======
-=======
->>>>>>> a58f1eb481476ee6ee14e24d91025442b0a10fca
-package com.eaju.extend.fastdfs;
-
-import lombok.extern.slf4j.Slf4j;
-import org.apache.commons.codec.binary.Base64;
-import org.apache.commons.lang3.StringUtils;
-<<<<<<< HEAD
->>>>>>> a58f1eb481476ee6ee14e24d91025442b0a10fca
-=======
->>>>>>> a58f1eb481476ee6ee14e24d91025442b0a10fca
 import org.apache.commons.pool2.impl.GenericObjectPool;
 import org.csource.common.MyException;
 import org.csource.common.NameValuePair;
@@ -24,14 +10,6 @@ import org.csource.fastdfs.FileInfo;
 import org.csource.fastdfs.ProtoCommon;
 import org.csource.fastdfs.StorageClient1;
 import org.csource.fastdfs.TrackerServer;
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-import org.springframework.beans.factory.annotation.Autowired;
->>>>>>> a58f1eb481476ee6ee14e24d91025442b0a10fca
-=======
-import org.springframework.beans.factory.annotation.Autowired;
->>>>>>> a58f1eb481476ee6ee14e24d91025442b0a10fca
 import org.springframework.web.multipart.MultipartFile;
 
 import javax.servlet.http.HttpServletResponse;
@@ -85,25 +63,11 @@ public class FastDFSClient {
      */
     private int maxFileSize = 100 * 1000 * 1000;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
 	private GenericObjectPool<TrackerServer> trackerServerPool;
 
     public FastDFSClient(GenericObjectPool<TrackerServer> trackerServerPool) {
         initExt();
 		this.trackerServerPool = trackerServerPool;
-=======
-=======
->>>>>>> a58f1eb481476ee6ee14e24d91025442b0a10fca
-	@Autowired
-	private GenericObjectPool<TrackerServer> trackerServerPool;
-
-    public FastDFSClient() {
-        initExt();
-<<<<<<< HEAD
->>>>>>> a58f1eb481476ee6ee14e24d91025442b0a10fca
-=======
->>>>>>> a58f1eb481476ee6ee14e24d91025442b0a10fca
     }
 
     private void initExt() {
@@ -241,15 +205,7 @@ public class FastDFSClient {
      * @return 文件路径
      */
     public String upload(String filepath, Map<String, String> descriptions) throws FastDFSException {
-<<<<<<< HEAD
-<<<<<<< HEAD
         if(StringUtils.isEmpty(filepath)){
-=======
-        if(StringUtils.isBlank(filepath)){
->>>>>>> a58f1eb481476ee6ee14e24d91025442b0a10fca
-=======
-        if(StringUtils.isBlank(filepath)){
->>>>>>> a58f1eb481476ee6ee14e24d91025442b0a10fca
             throw new FastDFSException(ErrorCode.FILE_PATH_ISNULL.CODE, ErrorCode.FILE_PATH_ISNULL.MESSAGE);
         }
         File file = new File(filepath);
@@ -280,15 +236,7 @@ public class FastDFSClient {
      * @throws FastDFSException base64为空则抛出异常
      */
     public String upload(String base64, String filename, Map<String, String> descriptions) throws FastDFSException {
-<<<<<<< HEAD
-<<<<<<< HEAD
         if(StringUtils.isEmpty(base64)){
-=======
-        if(StringUtils.isBlank(base64)){
->>>>>>> a58f1eb481476ee6ee14e24d91025442b0a10fca
-=======
-        if(StringUtils.isBlank(base64)){
->>>>>>> a58f1eb481476ee6ee14e24d91025442b0a10fca
             throw new FastDFSException(ErrorCode.FILE_ISNULL.CODE, ErrorCode.FILE_ISNULL.MESSAGE);
         }
         return upload(new ByteArrayInputStream(Base64.decodeBase64(base64)), filename, descriptions);
@@ -326,15 +274,7 @@ public class FastDFSClient {
         String suffix = getFilenameSuffix(filename);
 
         // 文件名
-<<<<<<< HEAD
-<<<<<<< HEAD
         if (!StringUtils.isEmpty(filename)) {
-=======
-        if (StringUtils.isNotBlank(filename)) {
->>>>>>> a58f1eb481476ee6ee14e24d91025442b0a10fca
-=======
-        if (StringUtils.isNotBlank(filename)) {
->>>>>>> a58f1eb481476ee6ee14e24d91025442b0a10fca
             nvpsList.add(new NameValuePair(FILENAME, filename));
         }
         // 描述信息
@@ -364,15 +304,7 @@ public class FastDFSClient {
             // 上传
             path = storageClient.upload_file1(fileBuff, suffix, nvps);
 
-<<<<<<< HEAD
-<<<<<<< HEAD
             if(StringUtils.isEmpty(path)) {
-=======
-            if(StringUtils.isBlank(path)) {
->>>>>>> a58f1eb481476ee6ee14e24d91025442b0a10fca
-=======
-            if(StringUtils.isBlank(path)) {
->>>>>>> a58f1eb481476ee6ee14e24d91025442b0a10fca
                 throw new FastDFSException(ErrorCode.FILE_UPLOAD_FAILED.CODE, ErrorCode.FILE_UPLOAD_FAILED.MESSAGE);
             }
 
@@ -441,29 +373,13 @@ public class FastDFSClient {
      * @param response HttpServletResponse
      */
     public void download(String filepath, String filename, OutputStream os, HttpServletResponse response) throws FastDFSException {
-<<<<<<< HEAD
-<<<<<<< HEAD
         if(StringUtils.isEmpty(filepath)){
-=======
-        if(StringUtils.isBlank(filepath)){
->>>>>>> a58f1eb481476ee6ee14e24d91025442b0a10fca
-=======
-        if(StringUtils.isBlank(filepath)){
->>>>>>> a58f1eb481476ee6ee14e24d91025442b0a10fca
             throw new FastDFSException(ErrorCode.FILE_PATH_ISNULL.CODE, ErrorCode.FILE_PATH_ISNULL.MESSAGE);
         }
 
         filepath = toLocal(filepath);
         // 文件名
-<<<<<<< HEAD
-<<<<<<< HEAD
         if (StringUtils.isEmpty(filename)) {
-=======
-        if (StringUtils.isBlank(filename)) {
->>>>>>> a58f1eb481476ee6ee14e24d91025442b0a10fca
-=======
-        if (StringUtils.isBlank(filename)) {
->>>>>>> a58f1eb481476ee6ee14e24d91025442b0a10fca
             filename = getOriginalFilename(filepath);
         }
         String contentType = EXT_MAPS.get(getFilenameSuffix(filename));
@@ -487,15 +403,7 @@ public class FastDFSClient {
                 os = response.getOutputStream();
 
                 // 设置响应头
-<<<<<<< HEAD
-<<<<<<< HEAD
                 if (!StringUtils.isEmpty(contentType)) {
-=======
-                if (StringUtils.isNotBlank(contentType)) {
->>>>>>> a58f1eb481476ee6ee14e24d91025442b0a10fca
-=======
-                if (StringUtils.isNotBlank(contentType)) {
->>>>>>> a58f1eb481476ee6ee14e24d91025442b0a10fca
                     // 文件编码 处理文件名中的 '+'、' ' 特殊字符
                     String encoderName = URLEncoder.encode(filename, "UTF-8").replace("+", "%20").replace("%2B", "+");
                     response.setHeader("Content-Disposition", "attachment;filename=\"" + encoderName + "\"");
@@ -543,15 +451,7 @@ public class FastDFSClient {
      * @throws FastDFSException
      */
     public byte[] download(String filepath) throws FastDFSException {
-<<<<<<< HEAD
-<<<<<<< HEAD
         if(StringUtils.isEmpty(filepath)){
-=======
-        if(StringUtils.isBlank(filepath)){
->>>>>>> a58f1eb481476ee6ee14e24d91025442b0a10fca
-=======
-        if(StringUtils.isBlank(filepath)){
->>>>>>> a58f1eb481476ee6ee14e24d91025442b0a10fca
             throw new FastDFSException(ErrorCode.FILE_PATH_ISNULL.CODE, ErrorCode.FILE_PATH_ISNULL.MESSAGE);
         }
 
@@ -587,15 +487,7 @@ public class FastDFSClient {
      * @return 删除成功返回 0, 失败返回其它
      */
     public int deleteFile(String filepath) throws FastDFSException {
-<<<<<<< HEAD
-<<<<<<< HEAD
         if(StringUtils.isEmpty(filepath)){
-=======
-        if(StringUtils.isBlank(filepath)){
->>>>>>> a58f1eb481476ee6ee14e24d91025442b0a10fca
-=======
-        if(StringUtils.isBlank(filepath)){
->>>>>>> a58f1eb481476ee6ee14e24d91025442b0a10fca
             throw new FastDFSException(ErrorCode.FILE_PATH_ISNULL.CODE, ErrorCode.FILE_PATH_ISNULL.MESSAGE);
         }
 
@@ -705,15 +597,7 @@ public class FastDFSClient {
 
     /**
      * 获取源文件的文件名称
-<<<<<<< HEAD
-<<<<<<< HEAD
      *
-=======
-     * 
->>>>>>> a58f1eb481476ee6ee14e24d91025442b0a10fca
-=======
-     * 
->>>>>>> a58f1eb481476ee6ee14e24d91025442b0a10fca
      * @param filepath 文件路径
      * @return 文件名称
      */
@@ -734,15 +618,7 @@ public class FastDFSClient {
     public static String getFilenameSuffix(String filename) {
         String suffix = null;
         String originalFilename = filename;
-<<<<<<< HEAD
-<<<<<<< HEAD
         if (!StringUtils.isEmpty(filename)) {
-=======
-        if (StringUtils.isNotBlank(filename)) {
->>>>>>> a58f1eb481476ee6ee14e24d91025442b0a10fca
-=======
-        if (StringUtils.isNotBlank(filename)) {
->>>>>>> a58f1eb481476ee6ee14e24d91025442b0a10fca
             if (filename.contains(SEPARATOR)) {
                 filename = filename.substring(filename.lastIndexOf(SEPARATOR) + 1);
             }
@@ -765,15 +641,7 @@ public class FastDFSClient {
      * @return
      */
     public static String toLocal(String path) {
-<<<<<<< HEAD
-<<<<<<< HEAD
         if (!StringUtils.isEmpty(path)) {
-=======
-        if (StringUtils.isNotBlank(path)) {
->>>>>>> a58f1eb481476ee6ee14e24d91025442b0a10fca
-=======
-        if (StringUtils.isNotBlank(path)) {
->>>>>>> a58f1eb481476ee6ee14e24d91025442b0a10fca
             path = path.replaceAll("\\\\", SEPARATOR);
 
             if (path.contains(POINT)) {

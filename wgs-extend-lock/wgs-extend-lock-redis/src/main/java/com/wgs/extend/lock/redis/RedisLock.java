@@ -1,7 +1,5 @@
 package com.wgs.extend.lock.redis;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
 import lombok.extern.slf4j.Slf4j;
 import org.redisson.Redisson;
 import org.redisson.api.RLock;
@@ -14,10 +12,6 @@ import org.springframework.stereotype.Component;
 import java.net.URL;
 import java.util.concurrent.TimeUnit;
 
-=======
->>>>>>> a58f1eb481476ee6ee14e24d91025442b0a10fca
-=======
->>>>>>> a58f1eb481476ee6ee14e24d91025442b0a10fca
 /**
  * @Description
  * @ClassName：RedisLock
@@ -25,8 +19,6 @@ import java.util.concurrent.TimeUnit;
  * @Date 2020年10月22日 21:08
  * @Version 1.0
  */
-<<<<<<< HEAD
-<<<<<<< HEAD
 @Slf4j
 @Component
 @ConfigurationProperties(prefix = "wgs.extend.lock.redis")
@@ -76,10 +68,4 @@ public class RedisLock {
 		threadLocal.get().unlock();
 		log.info(Thread.currentThread().getName() + "lock释放");
 	}
-=======
-public class RedisLock {
->>>>>>> a58f1eb481476ee6ee14e24d91025442b0a10fca
-=======
-public class RedisLock {
->>>>>>> a58f1eb481476ee6ee14e24d91025442b0a10fca
 }

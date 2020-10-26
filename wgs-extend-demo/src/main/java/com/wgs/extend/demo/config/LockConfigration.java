@@ -22,11 +22,11 @@ public class LockConfigration {
 //	private Environment environment;
 
 	@Value("${wgs.extend.lock.zk.url}")
-	private String url;
+	private String url; // zk地址
 	@Value("${wgs.extend.lock.zk.lockPath}")
-	private String lockPath;
+	private String lockPath; // zk上锁的根目录
 	@Value("${wgs.extend.lock.redis.url}")
-	private String redisUrl;
+	private String redisUrl; // redis地址
 
 	@Bean
 	public ZKLock initZKLock() {
