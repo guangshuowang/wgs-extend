@@ -1,5 +1,9 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 package com.wgs.extend.fdfs;
+=======
+package com.eaju.extend.fastdfs;
+>>>>>>> a58f1eb481476ee6ee14e24d91025442b0a10fca
 =======
 package com.eaju.extend.fastdfs;
 >>>>>>> a58f1eb481476ee6ee14e24d91025442b0a10fca
@@ -10,6 +14,10 @@ import org.apache.commons.pool2.impl.DefaultPooledObject;
 import org.csource.fastdfs.TrackerClient;
 import org.csource.fastdfs.TrackerServer;
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+import org.springframework.beans.factory.annotation.Autowired;
+>>>>>>> a58f1eb481476ee6ee14e24d91025442b0a10fca
 =======
 import org.springframework.beans.factory.annotation.Autowired;
 >>>>>>> a58f1eb481476ee6ee14e24d91025442b0a10fca
@@ -22,6 +30,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 public class TrackerServerFactory extends BasePooledObjectFactory<TrackerServer> {
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 	private TrackerClient trackerClient;
 
 	public TrackerServerFactory(TrackerClient trackerClient) {
@@ -32,6 +41,8 @@ public class TrackerServerFactory extends BasePooledObjectFactory<TrackerServer>
     public TrackerServer create() throws Exception {
 		return trackerClient.getConnection();
 =======
+=======
+>>>>>>> a58f1eb481476ee6ee14e24d91025442b0a10fca
 	@Autowired
 	private TrackerClient trackerClient;
 
@@ -39,6 +50,9 @@ public class TrackerServerFactory extends BasePooledObjectFactory<TrackerServer>
     public TrackerServer create() throws Exception {
         TrackerServer trackerServer = trackerClient.getConnection();
         return trackerServer;
+<<<<<<< HEAD
+>>>>>>> a58f1eb481476ee6ee14e24d91025442b0a10fca
+=======
 >>>>>>> a58f1eb481476ee6ee14e24d91025442b0a10fca
     }
 

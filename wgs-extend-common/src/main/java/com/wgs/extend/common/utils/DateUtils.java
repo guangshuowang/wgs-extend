@@ -1,6 +1,10 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 package com.wgs.extend.common.utils;
 
+=======
+package com.eaju.common.utils;
+>>>>>>> a58f1eb481476ee6ee14e24d91025442b0a10fca
 =======
 package com.eaju.common.utils;
 >>>>>>> a58f1eb481476ee6ee14e24d91025442b0a10fca
@@ -10,13 +14,17 @@ import org.apache.commons.lang3.time.DateFormatUtils;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 <<<<<<< HEAD
+<<<<<<< HEAD
 import java.time.format.DateTimeFormatter;
+=======
+>>>>>>> a58f1eb481476ee6ee14e24d91025442b0a10fca
 =======
 >>>>>>> a58f1eb481476ee6ee14e24d91025442b0a10fca
 import java.util.Calendar;
 import java.util.Date;
 
 public class DateUtils {
+<<<<<<< HEAD
 <<<<<<< HEAD
 
 
@@ -25,6 +33,9 @@ public class DateUtils {
 			"yyyy/MM/dd", "yyyy/MM/dd HH:mm:ss", "yyyy/MM/dd HH:mm", "yyyy/MM",
 			"yyyy.MM.dd", "yyyy.MM.dd HH:mm:ss", "yyyy.MM.dd HH:mm", "yyyy.MM"};
 
+=======
+	
+>>>>>>> a58f1eb481476ee6ee14e24d91025442b0a10fca
 =======
 	
 >>>>>>> a58f1eb481476ee6ee14e24d91025442b0a10fca
@@ -52,7 +63,10 @@ public class DateUtils {
 		}
 	}
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> a58f1eb481476ee6ee14e24d91025442b0a10fca
 	/**
 	 * 当前时间后移   n天 n小时  n分   n秒
 	 * @方法名: timeDate  
@@ -131,6 +145,9 @@ public class DateUtils {
 			"yyyy-MM-dd", "yyyy-MM-dd HH:mm:ss", "yyyy-MM-dd HH:mm", "yyyy-MM",
 			"yyyy/MM/dd", "yyyy/MM/dd HH:mm:ss", "yyyy/MM/dd HH:mm", "yyyy/MM",
 			"yyyy.MM.dd", "yyyy.MM.dd HH:mm:ss", "yyyy.MM.dd HH:mm", "yyyy.MM"};
+<<<<<<< HEAD
+>>>>>>> a58f1eb481476ee6ee14e24d91025442b0a10fca
+=======
 >>>>>>> a58f1eb481476ee6ee14e24d91025442b0a10fca
 
 	/**
@@ -151,9 +168,12 @@ public class DateUtils {
 	 * 得到日期字符串 默认格式（yyyy-MM-dd） pattern可以为："yyyy-MM-dd" "HH:mm:ss" "E"
 	 */
 <<<<<<< HEAD
+<<<<<<< HEAD
 	private static String formatDate(Date date, String pattern) {
 		return DateFormatUtils.format(date, pattern);
 =======
+=======
+>>>>>>> a58f1eb481476ee6ee14e24d91025442b0a10fca
 	public static String formatDate(Date date, Object... pattern) {
 		String formatDate = null;
 		if (pattern != null && pattern.length > 0) {
@@ -162,6 +182,9 @@ public class DateUtils {
 			formatDate = DateFormatUtils.format(date, "yyyy-MM-dd");
 		}
 		return formatDate;
+<<<<<<< HEAD
+>>>>>>> a58f1eb481476ee6ee14e24d91025442b0a10fca
+=======
 >>>>>>> a58f1eb481476ee6ee14e24d91025442b0a10fca
 	}
 
@@ -216,7 +239,10 @@ public class DateUtils {
 
 	/**
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> a58f1eb481476ee6ee14e24d91025442b0a10fca
 	 * 日期型字符串转化为日期 格式
 	 * { "yyyy-MM-dd", "yyyy-MM-dd HH:mm:ss", "yyyy-MM-dd HH:mm",
 	 *   "yyyy/MM/dd", "yyyy/MM/dd HH:mm:ss", "yyyy/MM/dd HH:mm",
@@ -234,6 +260,9 @@ public class DateUtils {
 	}
 
 	/**
+<<<<<<< HEAD
+>>>>>>> a58f1eb481476ee6ee14e24d91025442b0a10fca
+=======
 >>>>>>> a58f1eb481476ee6ee14e24d91025442b0a10fca
 	 * 获取过去的天数
 	 * @param date

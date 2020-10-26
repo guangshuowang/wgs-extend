@@ -5,9 +5,15 @@
  * bb.bj.cn PROPRIETARY/CONFIDENTIAL. Use is subject to license terms.
  */
 <<<<<<< HEAD
+<<<<<<< HEAD
 package com.wgs.extend.dubbo.tracelog;
 
 import com.wgs.extend.common.utils.StringUtils;
+=======
+package com.eaju.extend.tracelog;
+
+import com.eaju.common.utils.StringUtil;
+>>>>>>> a58f1eb481476ee6ee14e24d91025442b0a10fca
 =======
 package com.eaju.extend.tracelog;
 
@@ -23,7 +29,11 @@ public class ThreadMdcUtil {
     public static void setTraceIdIfAbsent() {
         if (MDC.get(LOG_TRACE_ID) == null) {
 <<<<<<< HEAD
+<<<<<<< HEAD
             MDC.put(LOG_TRACE_ID, StringUtils.get32UUID());
+=======
+            MDC.put(LOG_TRACE_ID, StringUtil.get32UUID());
+>>>>>>> a58f1eb481476ee6ee14e24d91025442b0a10fca
 =======
             MDC.put(LOG_TRACE_ID, StringUtil.get32UUID());
 >>>>>>> a58f1eb481476ee6ee14e24d91025442b0a10fca

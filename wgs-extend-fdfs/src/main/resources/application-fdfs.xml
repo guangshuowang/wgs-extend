@@ -5,6 +5,7 @@
 	
 	<!--fdfs服务器配置初始化-->
 <<<<<<< HEAD
+<<<<<<< HEAD
 	<bean id="fdfsInit" class="com.wgs.extend.fdfs.FdfsInit" init-method="init">
 		<property name="antiStealToken" value="${wgs.extend.fdfs.antiStealToken}" />
 		<property name="charSet" value="${wgs.extend.fdfs.charset}" />
@@ -14,6 +15,8 @@
 		<property name="trackerHttpPort" value="${wgs.extend.fdfs.trackerHttpPort}" />
 		<property name="trackerServers" value="${wgs.extend.fdfs.trackerServers}" />
 =======
+=======
+>>>>>>> a58f1eb481476ee6ee14e24d91025442b0a10fca
 	<bean id="fdfsInit" class="com.eaju.extend.fastdfs.FdfsInit" init-method="init">
 		<property name="antiStealToken" value="${eaju.fastdfs.http_anti_steal_token}" />
 		<property name="charSet" value="${eaju.fastdfs.charset}" />
@@ -22,11 +25,15 @@
 		<property name="httpSecretKey" value="${eaju.fastdfs.http_secret_key}" />
 		<property name="trackerHttpPort" value="${eaju.fastdfs.http_tracker_http_port}" />
 		<property name="trackerServers" value="${eaju.fastdfs.tracker_servers}" />
+<<<<<<< HEAD
+>>>>>>> a58f1eb481476ee6ee14e24d91025442b0a10fca
+=======
 >>>>>>> a58f1eb481476ee6ee14e24d91025442b0a10fca
 	</bean>
 	<!--client对象-->
 	<bean id="trackerClient" class="org.csource.fastdfs.TrackerClient" depends-on="fdfsInit"/>
 	<!--tracker连接工厂-->
+<<<<<<< HEAD
 <<<<<<< HEAD
 	<bean id="trackerServerFactory" class="com.wgs.extend.fdfs.TrackerServerFactory"  >
 		<constructor-arg ref="trackerClient" />
@@ -47,6 +54,8 @@
 		<!-- jmx监控 生产环境不开启 -->
 		<!--<property name="jmxEnabled" value="${wgs.extend.object_pool.jmxEnabled}" />-->
 =======
+=======
+>>>>>>> a58f1eb481476ee6ee14e24d91025442b0a10fca
 	<bean id="trackerServerFactory" class="com.eaju.extend.fastdfs.TrackerServerFactory"  />
 	<!--tracker连接池配置-->
 	<bean id="genericObjectPoolConfig" class="org.apache.commons.pool2.impl.GenericObjectPoolConfig">
@@ -63,6 +72,9 @@
 		<property name="timeBetweenEvictionRunsMillis" value="${eaju.object_pool.timeBetEvicRun}" />
 		<!-- jmx监控 生产环境不开启 -->
 		<!--<property name="jmxEnabled" value="${eaju.object_pool.jmxEnabled}" />-->
+<<<<<<< HEAD
+>>>>>>> a58f1eb481476ee6ee14e24d91025442b0a10fca
+=======
 >>>>>>> a58f1eb481476ee6ee14e24d91025442b0a10fca
 	</bean>
 	<!--tracker连接池-->
@@ -73,9 +85,13 @@
 	
 	<!--操作客户端-->
 <<<<<<< HEAD
+<<<<<<< HEAD
 	<bean id="fastDFSClient" class="com.wgs.extend.fdfs.FastDFSClient">
 		<constructor-arg ref="trackerServerPool" />
 	</bean>
+=======
+	<bean id="fastDFSClient" class="com.eaju.extend.fastdfs.FastDFSClient" />
+>>>>>>> a58f1eb481476ee6ee14e24d91025442b0a10fca
 =======
 	<bean id="fastDFSClient" class="com.eaju.extend.fastdfs.FastDFSClient" />
 >>>>>>> a58f1eb481476ee6ee14e24d91025442b0a10fca

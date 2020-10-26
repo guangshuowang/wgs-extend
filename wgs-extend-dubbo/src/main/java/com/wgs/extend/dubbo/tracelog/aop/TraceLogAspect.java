@@ -3,11 +3,14 @@
  * 下午5:47:49 Version: 1.0
  */
 <<<<<<< HEAD
+<<<<<<< HEAD
 package com.wgs.extend.dubbo.tracelog.aop;
 
 import com.wgs.extend.common.utils.DateUtils;
 import com.wgs.extend.dubbo.tracelog.ThreadMdcUtil;
 =======
+=======
+>>>>>>> a58f1eb481476ee6ee14e24d91025442b0a10fca
 package com.eaju.extend.tracelog.aop;
 
 import com.alibaba.fastjson.JSON;
@@ -19,12 +22,19 @@ import com.eaju.common.entity.result.ResultSet;
 import com.eaju.common.utils.AESUtil;
 import com.eaju.common.utils.DateUtils;
 import com.eaju.extend.tracelog.ThreadMdcUtil;
+<<<<<<< HEAD
+>>>>>>> a58f1eb481476ee6ee14e24d91025442b0a10fca
+=======
 >>>>>>> a58f1eb481476ee6ee14e24d91025442b0a10fca
 import lombok.extern.slf4j.Slf4j;
 import org.apache.dubbo.rpc.RpcContext;
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.annotation.After;
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+import org.aspectj.lang.annotation.AfterReturning;
+>>>>>>> a58f1eb481476ee6ee14e24d91025442b0a10fca
 =======
 import org.aspectj.lang.annotation.AfterReturning;
 >>>>>>> a58f1eb481476ee6ee14e24d91025442b0a10fca
@@ -33,6 +43,10 @@ import org.aspectj.lang.annotation.Before;
 import org.aspectj.lang.annotation.Pointcut;
 import org.springframework.core.annotation.Order;
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+import org.springframework.http.HttpStatus;
+>>>>>>> a58f1eb481476ee6ee14e24d91025442b0a10fca
 =======
 import org.springframework.http.HttpStatus;
 >>>>>>> a58f1eb481476ee6ee14e24d91025442b0a10fca
@@ -41,6 +55,10 @@ import org.springframework.util.StringUtils;
 
 import java.util.Date;
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+import java.util.Objects;
+>>>>>>> a58f1eb481476ee6ee14e24d91025442b0a10fca
 =======
 import java.util.Objects;
 >>>>>>> a58f1eb481476ee6ee14e24d91025442b0a10fca
@@ -60,6 +78,7 @@ import java.util.Objects;
 public abstract class TraceLogAspect {
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 	@Pointcut("execution(* com.wgs.*.controller..*.*(..))")
 	public void controllerPointcut() {}
 
@@ -67,6 +86,8 @@ public abstract class TraceLogAspect {
 	public void servicePointcut() {}
 
 =======
+=======
+>>>>>>> a58f1eb481476ee6ee14e24d91025442b0a10fca
 	@Pointcut("execution(* com.eaju.*.controller..*.*(..))")
 	public void controllerPointcut() {}
 
@@ -80,6 +101,9 @@ public abstract class TraceLogAspect {
 	public void aesAspect() {}
 
 
+<<<<<<< HEAD
+>>>>>>> a58f1eb481476ee6ee14e24d91025442b0a10fca
+=======
 >>>>>>> a58f1eb481476ee6ee14e24d91025442b0a10fca
 	@Before("controllerPointcut()")
     public void controllerBefore(JoinPoint point) {
@@ -130,7 +154,10 @@ public abstract class TraceLogAspect {
 	public abstract void saveControllerTraceLog(String className, String methodName, long time);
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> a58f1eb481476ee6ee14e24d91025442b0a10fca
 
 
 
@@ -171,5 +198,8 @@ public abstract class TraceLogAspect {
 			log.error("无对应加密结果类型");
 		}
 	}
+<<<<<<< HEAD
+>>>>>>> a58f1eb481476ee6ee14e24d91025442b0a10fca
+=======
 >>>>>>> a58f1eb481476ee6ee14e24d91025442b0a10fca
 }

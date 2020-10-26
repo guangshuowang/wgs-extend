@@ -1,13 +1,19 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 package com.wgs.extend.common.utils;
 
 
 =======
+=======
+>>>>>>> a58f1eb481476ee6ee14e24d91025442b0a10fca
 package com.eaju.common.utils;
 
 
 import org.springframework.util.StringUtils;
 
+<<<<<<< HEAD
+>>>>>>> a58f1eb481476ee6ee14e24d91025442b0a10fca
+=======
 >>>>>>> a58f1eb481476ee6ee14e24d91025442b0a10fca
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
@@ -23,8 +29,11 @@ import java.util.regex.Pattern;
  */
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 public final class StringUtils {
 =======
+=======
+>>>>>>> a58f1eb481476ee6ee14e24d91025442b0a10fca
 public final class StringUtil {
 
     /**
@@ -32,6 +41,9 @@ public final class StringUtil {
      */
     private StringUtil() {
     }
+<<<<<<< HEAD
+>>>>>>> a58f1eb481476ee6ee14e24d91025442b0a10fca
+=======
 >>>>>>> a58f1eb481476ee6ee14e24d91025442b0a10fca
 
 	public static boolean isChinaMobile(String mobile) {
@@ -69,6 +81,7 @@ public final class StringUtil {
 
     /**
 <<<<<<< HEAD
+<<<<<<< HEAD
      * 判断字符串是否为空
      */
     public static boolean isEmpty(String str) {
@@ -76,6 +89,8 @@ public final class StringUtil {
     }
 
 =======
+=======
+>>>>>>> a58f1eb481476ee6ee14e24d91025442b0a10fca
      * 函数功能说明 ： 判断字符串是否为空 . 修改者名字： 修改日期： 修改内容：
      * 
      * @参数： @param str
@@ -152,6 +167,9 @@ public final class StringUtil {
     public static String getExt(String fileName) {
         return fileName.substring(fileName.lastIndexOf(".") + 1);
     }
+<<<<<<< HEAD
+>>>>>>> a58f1eb481476ee6ee14e24d91025442b0a10fca
+=======
 >>>>>>> a58f1eb481476ee6ee14e24d91025442b0a10fca
 
     /**
@@ -165,6 +183,10 @@ public final class StringUtil {
 
 	public static String get16UUID() {
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+//		return get32UUID().substring(0, 16);
+>>>>>>> a58f1eb481476ee6ee14e24d91025442b0a10fca
 =======
 //		return get32UUID().substring(0, 16);
 >>>>>>> a58f1eb481476ee6ee14e24d91025442b0a10fca
@@ -197,7 +219,11 @@ public final class StringUtil {
      */
     public static boolean isNumeric(String str) {
 <<<<<<< HEAD
+<<<<<<< HEAD
         if (isEmpty(str)) {
+=======
+        if (StringUtils.isEmpty(str)) {
+>>>>>>> a58f1eb481476ee6ee14e24d91025442b0a10fca
 =======
         if (StringUtils.isEmpty(str)) {
 >>>>>>> a58f1eb481476ee6ee14e24d91025442b0a10fca
@@ -207,7 +233,10 @@ public final class StringUtil {
         }
     }
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> a58f1eb481476ee6ee14e24d91025442b0a10fca
 
     /**
      * 计算采用utf-8编码方式时字符串所占字节数
@@ -243,5 +272,8 @@ public final class StringUtil {
         return list;
     }
 
+<<<<<<< HEAD
+>>>>>>> a58f1eb481476ee6ee14e24d91025442b0a10fca
+=======
 >>>>>>> a58f1eb481476ee6ee14e24d91025442b0a10fca
 }

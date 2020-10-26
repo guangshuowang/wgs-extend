@@ -1,15 +1,21 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 package com.wgs.extend.fdfs;
 
 import com.wgs.extend.common.utils.StringUtils;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.codec.binary.Base64;
 =======
+=======
+>>>>>>> a58f1eb481476ee6ee14e24d91025442b0a10fca
 package com.eaju.extend.fastdfs;
 
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.codec.binary.Base64;
 import org.apache.commons.lang3.StringUtils;
+<<<<<<< HEAD
+>>>>>>> a58f1eb481476ee6ee14e24d91025442b0a10fca
+=======
 >>>>>>> a58f1eb481476ee6ee14e24d91025442b0a10fca
 import org.apache.commons.pool2.impl.GenericObjectPool;
 import org.csource.common.MyException;
@@ -19,6 +25,10 @@ import org.csource.fastdfs.ProtoCommon;
 import org.csource.fastdfs.StorageClient1;
 import org.csource.fastdfs.TrackerServer;
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+import org.springframework.beans.factory.annotation.Autowired;
+>>>>>>> a58f1eb481476ee6ee14e24d91025442b0a10fca
 =======
 import org.springframework.beans.factory.annotation.Autowired;
 >>>>>>> a58f1eb481476ee6ee14e24d91025442b0a10fca
@@ -76,17 +86,23 @@ public class FastDFSClient {
     private int maxFileSize = 100 * 1000 * 1000;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 	private GenericObjectPool<TrackerServer> trackerServerPool;
 
     public FastDFSClient(GenericObjectPool<TrackerServer> trackerServerPool) {
         initExt();
 		this.trackerServerPool = trackerServerPool;
 =======
+=======
+>>>>>>> a58f1eb481476ee6ee14e24d91025442b0a10fca
 	@Autowired
 	private GenericObjectPool<TrackerServer> trackerServerPool;
 
     public FastDFSClient() {
         initExt();
+<<<<<<< HEAD
+>>>>>>> a58f1eb481476ee6ee14e24d91025442b0a10fca
+=======
 >>>>>>> a58f1eb481476ee6ee14e24d91025442b0a10fca
     }
 
@@ -226,7 +242,11 @@ public class FastDFSClient {
      */
     public String upload(String filepath, Map<String, String> descriptions) throws FastDFSException {
 <<<<<<< HEAD
+<<<<<<< HEAD
         if(StringUtils.isEmpty(filepath)){
+=======
+        if(StringUtils.isBlank(filepath)){
+>>>>>>> a58f1eb481476ee6ee14e24d91025442b0a10fca
 =======
         if(StringUtils.isBlank(filepath)){
 >>>>>>> a58f1eb481476ee6ee14e24d91025442b0a10fca
@@ -261,7 +281,11 @@ public class FastDFSClient {
      */
     public String upload(String base64, String filename, Map<String, String> descriptions) throws FastDFSException {
 <<<<<<< HEAD
+<<<<<<< HEAD
         if(StringUtils.isEmpty(base64)){
+=======
+        if(StringUtils.isBlank(base64)){
+>>>>>>> a58f1eb481476ee6ee14e24d91025442b0a10fca
 =======
         if(StringUtils.isBlank(base64)){
 >>>>>>> a58f1eb481476ee6ee14e24d91025442b0a10fca
@@ -303,7 +327,11 @@ public class FastDFSClient {
 
         // 文件名
 <<<<<<< HEAD
+<<<<<<< HEAD
         if (!StringUtils.isEmpty(filename)) {
+=======
+        if (StringUtils.isNotBlank(filename)) {
+>>>>>>> a58f1eb481476ee6ee14e24d91025442b0a10fca
 =======
         if (StringUtils.isNotBlank(filename)) {
 >>>>>>> a58f1eb481476ee6ee14e24d91025442b0a10fca
@@ -337,7 +365,11 @@ public class FastDFSClient {
             path = storageClient.upload_file1(fileBuff, suffix, nvps);
 
 <<<<<<< HEAD
+<<<<<<< HEAD
             if(StringUtils.isEmpty(path)) {
+=======
+            if(StringUtils.isBlank(path)) {
+>>>>>>> a58f1eb481476ee6ee14e24d91025442b0a10fca
 =======
             if(StringUtils.isBlank(path)) {
 >>>>>>> a58f1eb481476ee6ee14e24d91025442b0a10fca
@@ -410,7 +442,11 @@ public class FastDFSClient {
      */
     public void download(String filepath, String filename, OutputStream os, HttpServletResponse response) throws FastDFSException {
 <<<<<<< HEAD
+<<<<<<< HEAD
         if(StringUtils.isEmpty(filepath)){
+=======
+        if(StringUtils.isBlank(filepath)){
+>>>>>>> a58f1eb481476ee6ee14e24d91025442b0a10fca
 =======
         if(StringUtils.isBlank(filepath)){
 >>>>>>> a58f1eb481476ee6ee14e24d91025442b0a10fca
@@ -420,7 +456,11 @@ public class FastDFSClient {
         filepath = toLocal(filepath);
         // 文件名
 <<<<<<< HEAD
+<<<<<<< HEAD
         if (StringUtils.isEmpty(filename)) {
+=======
+        if (StringUtils.isBlank(filename)) {
+>>>>>>> a58f1eb481476ee6ee14e24d91025442b0a10fca
 =======
         if (StringUtils.isBlank(filename)) {
 >>>>>>> a58f1eb481476ee6ee14e24d91025442b0a10fca
@@ -448,7 +488,11 @@ public class FastDFSClient {
 
                 // 设置响应头
 <<<<<<< HEAD
+<<<<<<< HEAD
                 if (!StringUtils.isEmpty(contentType)) {
+=======
+                if (StringUtils.isNotBlank(contentType)) {
+>>>>>>> a58f1eb481476ee6ee14e24d91025442b0a10fca
 =======
                 if (StringUtils.isNotBlank(contentType)) {
 >>>>>>> a58f1eb481476ee6ee14e24d91025442b0a10fca
@@ -500,7 +544,11 @@ public class FastDFSClient {
      */
     public byte[] download(String filepath) throws FastDFSException {
 <<<<<<< HEAD
+<<<<<<< HEAD
         if(StringUtils.isEmpty(filepath)){
+=======
+        if(StringUtils.isBlank(filepath)){
+>>>>>>> a58f1eb481476ee6ee14e24d91025442b0a10fca
 =======
         if(StringUtils.isBlank(filepath)){
 >>>>>>> a58f1eb481476ee6ee14e24d91025442b0a10fca
@@ -540,7 +588,11 @@ public class FastDFSClient {
      */
     public int deleteFile(String filepath) throws FastDFSException {
 <<<<<<< HEAD
+<<<<<<< HEAD
         if(StringUtils.isEmpty(filepath)){
+=======
+        if(StringUtils.isBlank(filepath)){
+>>>>>>> a58f1eb481476ee6ee14e24d91025442b0a10fca
 =======
         if(StringUtils.isBlank(filepath)){
 >>>>>>> a58f1eb481476ee6ee14e24d91025442b0a10fca
@@ -654,7 +706,11 @@ public class FastDFSClient {
     /**
      * 获取源文件的文件名称
 <<<<<<< HEAD
+<<<<<<< HEAD
      *
+=======
+     * 
+>>>>>>> a58f1eb481476ee6ee14e24d91025442b0a10fca
 =======
      * 
 >>>>>>> a58f1eb481476ee6ee14e24d91025442b0a10fca
@@ -679,7 +735,11 @@ public class FastDFSClient {
         String suffix = null;
         String originalFilename = filename;
 <<<<<<< HEAD
+<<<<<<< HEAD
         if (!StringUtils.isEmpty(filename)) {
+=======
+        if (StringUtils.isNotBlank(filename)) {
+>>>>>>> a58f1eb481476ee6ee14e24d91025442b0a10fca
 =======
         if (StringUtils.isNotBlank(filename)) {
 >>>>>>> a58f1eb481476ee6ee14e24d91025442b0a10fca
@@ -706,7 +766,11 @@ public class FastDFSClient {
      */
     public static String toLocal(String path) {
 <<<<<<< HEAD
+<<<<<<< HEAD
         if (!StringUtils.isEmpty(path)) {
+=======
+        if (StringUtils.isNotBlank(path)) {
+>>>>>>> a58f1eb481476ee6ee14e24d91025442b0a10fca
 =======
         if (StringUtils.isNotBlank(path)) {
 >>>>>>> a58f1eb481476ee6ee14e24d91025442b0a10fca

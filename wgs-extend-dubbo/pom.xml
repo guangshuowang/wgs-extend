@@ -12,6 +12,7 @@
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -44,6 +45,8 @@
 			<version>2.7.6</version>
 		</dependency>
 	</dependencies>
+=======
+>>>>>>> a58f1eb481476ee6ee14e24d91025442b0a10fca
 =======
 >>>>>>> a58f1eb481476ee6ee14e24d91025442b0a10fca
 </project>
