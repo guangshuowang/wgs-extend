@@ -9,8 +9,6 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.stereotype.Component;
 
-import java.net.URL;
-import java.util.concurrent.TimeUnit;
 
 /**
  * @Description
@@ -26,7 +24,7 @@ public class RedisLock {
 
 
 //	@Value("${url}")
-	private String url;
+//	private String url;
 	private Config config;
 
 	private final InheritableThreadLocal<RLock> threadLocal = new InheritableThreadLocal<>();
@@ -34,8 +32,9 @@ public class RedisLock {
 	public RedisLock() {
 	}
 
-	public RedisLock(String url) {
-		this.url = url;
+	public RedisLock(@Value("${wgs.extend.lock.redis.url}") String url) {
+//		this.url = url;
+		log.info("初始化redisLock：{}", url);
 		config = new Config();
 		config.useSingleServer().setAddress(url);
 	}

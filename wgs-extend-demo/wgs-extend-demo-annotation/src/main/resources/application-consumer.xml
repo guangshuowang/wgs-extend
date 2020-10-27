@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:dubbo="http://dubbo.apache.org/schema/dubbo"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.2.xsd
+	http://dubbo.apache.org/schema/dubbo http://dubbo.apache.org/schema/dubbo/dubbo.xsd">
+	
+	
+	<dubbo:application name="demo" />
+    <!-- 引用dubbo服务 -->
+	<dubbo:registry protocol="zookeeper" address="172.20.32.252:2181" />
+	
+	
+	<!-- ==================================system 模块服务================================ -->
+	<!--平台配置信息服务，-->
+	<!--<dubbo:reference interface="com.eaju.system.api.SysUserService" id="sysUserService" check="false"-->
+	                 <!--version="1.0.0-dev" timeout="3000"-->
+	                 <!--retries="0" />-->
+</beans>

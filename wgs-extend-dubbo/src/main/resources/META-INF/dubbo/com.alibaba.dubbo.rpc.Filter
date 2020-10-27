@@ -1,2 +1,2 @@
-dubboProviderContextFilter=com.eaju.extend.tracelog.filter.DubboProviderContextFilter
-dubboConsumerContextFilter=com.eaju.extend.tracelog.filter.DubboConsumerContextFilter
+dubboProviderContextFilter=com.wgs.extend.dubbo.tracelog.filter.DubboProviderContextFilter
+dubboConsumerContextFilter=com.wgs.extend.dubbo.tracelog.filter.DubboConsumerContextFilter

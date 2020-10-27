@@ -30,7 +30,7 @@ wgs:
       connectTimeout: 10000
       networkTimeout: 30000
       antiStealToken: false
-      httpSecretKey: FastDFS1234567890
+      httpSecretKey: xxx1234567890
     lock:
       zk:
         url: 172.20.32.252:2181

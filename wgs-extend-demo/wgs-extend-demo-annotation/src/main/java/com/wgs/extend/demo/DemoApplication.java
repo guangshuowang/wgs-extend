@@ -7,9 +7,19 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.ComponentScans;
 import org.springframework.context.annotation.ImportResource;
 
+
+/**
+ *
+ * 注解启动，适合springboot或spring项目
+ *
+ *
+ * @Author  wanggsh
+ * @Date    2020-10-27 15:40
+ * @Version 1.0
+ */
 @SpringBootApplication
 @ImportResource("classpath*:application-fdfs.xml")
-//@ComponentScans({@ComponentScan("com.wgs.extend.dubbo"), @ComponentScan("com.wgs.extend.fdfs")})
+@ComponentScans({@ComponentScan("com.wgs.extend.lock.zk"), @ComponentScan("com.wgs.extend.lock.redis")})
 public class DemoApplication {
 
 	public static void main(String[] args) {

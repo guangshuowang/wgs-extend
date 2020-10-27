@@ -1,7 +1,7 @@
-package com.wgs.extend.lock;
+package com.wgs.extend.common.enumerate;
 
 
-import org.springframework.util.StringUtils;
+import com.wgs.extend.common.utils.StringUtils;
 
 /**
  * @Description

@@ -30,7 +30,9 @@ public class ZKLock {
 	/**
 	 * zookeeper上锁的根目录路径，要以/结尾
 	 */
-//	@Value("${wgs.extend.lock.path:/distributed-lock/}")
+//	@Value("${wgs.extend.lock.zk.url}")
+//	private String url;
+//	@Value("${wgs.extend.lock.zk.lockPath:/distributed-lock/}")
 	private String lockPath;
 	private CuratorFramework client;
 
@@ -51,10 +53,14 @@ public class ZKLock {
 	 */
 	private final InheritableThreadLocal<Map<String, InterProcessMutex>> threadLocalMulti = new InheritableThreadLocal<>();
 
-	public ZKLock() {
-	}
+//	public ZKLock(@Value("${wgs.extend.lock.zk.url}") String url) {
+//		client= CuratorFrameworkFactory.builder().connectString(url)
+//				.sessionTimeoutMs(5000).retryPolicy(new ExponentialBackoffRetry(1000, 3)).build();
+//		client.start();
+//	}
 
-	public ZKLock(String url, String lockPath) {
+	public ZKLock(@Value("${wgs.extend.lock.zk.url}") String url, @Value("${wgs.extend.lock.zk.lockPath:/distributed-lock/}") String lockPath) {
+		log.info("初始化zkLock：{}，根目录：{}", url, lockPath);
 		this.lockPath = lockPath;
 		client= CuratorFrameworkFactory.builder().connectString(url)
 				.sessionTimeoutMs(5000).retryPolicy(new ExponentialBackoffRetry(1000, 3)).build();
