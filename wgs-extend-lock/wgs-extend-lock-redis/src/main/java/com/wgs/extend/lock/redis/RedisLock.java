@@ -29,9 +29,6 @@ public class RedisLock {
 
 	private final InheritableThreadLocal<RLock> threadLocal = new InheritableThreadLocal<>();
 
-	public RedisLock() {
-	}
-
 	public RedisLock(@Value("${wgs.extend.lock.redis.url}") String url) {
 //		this.url = url;
 		log.info("初始化redisLock：{}", url);

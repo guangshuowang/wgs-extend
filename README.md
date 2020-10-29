@@ -1,9 +1,12 @@
 # wgs-extend
 * 扩展包，以依赖包的方式可插拔配置到项目中，单功能单包，最大选择化集成
 ## lock配置
+### lock有zklock和redisLock两种，选择配置
+* 引入wgs-extend-lock-redis.jar或者wgs-extend-lock-zookeeper.jar
 * api配置方式：demo模块LockConfigration类配置
 * 配置扫描包路径：com.wgs.extend.lock.zk或com.wgs.extend.lock.redis
 ## fdfs连接池配置
+* 引入wgs-extend-fdfs.jar
 * 只支持xml配置文件方式加载，配置好必要的配置项：
     wgs:
       extend:
@@ -29,4 +32,8 @@
           httpSecretKey: xxx1234567890
     springboot项目启动类中导入配置文件：@ImportResource("classpath*:application-fdfs.xml")即可
     spring项目在配置文件：<import resource="classpath*:application-fdfs.xml" />
+
+## dubbo服务日志链路（依赖aop）
+* 引入wgs-extend-dubbo.jar
+* 
 # 正在完成中
