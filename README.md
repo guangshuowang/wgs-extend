@@ -17,30 +17,30 @@
 ## 文件服务器fdfs连接池配置
 * 引入wgs-extend-fdfs.jar
 * 只支持xml配置文件方式加载，配置好必要的配置项：
-    wgs:
-      extend:
-        object_pool:
-          minIdle: 0
-          maxIdle: 8
-          maxTotal: 32
-          testOnCreate: false
-          testOnBorrow: true
-          testOnReturn: false
-          testWhileIdle: true
-          blockWhenExhausted: true
-          maxWaitMillis: 5000
-          minEvicTime: 60000
-          timeBetEvicRun: 300000
-        fdfs:
-          charSet: UTF-8
-          trackerServers: 172.20.32.252:22122,172.20.32.252:22122
-          trackerHttpPort: 80
-          connectTimeout: 10000
-          networkTimeout: 30000
-          antiStealToken: false
-          httpSecretKey: xxx1234567890
-    springboot项目启动类中导入配置文件：@ImportResource("classpath*:application-fdfs.xml")即可
-    spring项目在配置文件：<import resource="classpath*:application-fdfs.xml" />
+``````    wgs:
+````      extend:
+````        object_pool:
+````          minIdle: 0
+````          maxIdle: 8
+````          maxTotal: 32
+````          testOnCreate: false
+````          testOnBorrow: true
+````          testOnReturn: false
+````          testWhileIdle: true
+````          blockWhenExhausted: true
+````          maxWaitMillis: 5000
+````          minEvicTime: 60000
+````          timeBetEvicRun: 300000
+````        fdfs:
+````          charSet: UTF-8
+````          trackerServers: 172.20.32.252:22122,172.20.32.252:22122
+````          trackerHttpPort: 80
+````          connectTimeout: 10000
+````          networkTimeout: 30000
+````          antiStealToken: false
+````          httpSecretKey: xxx1234567890
+*    springboot项目启动类中导入配置文件：@ImportResource("classpath*:application-fdfs.xml")即可
+*    spring项目在配置文件：<import resource="classpath*:application-fdfs.xml" />
 
 ## dubbo服务日志链路（依赖aop）
 * 引入wgs-extend-dubbo.jar
