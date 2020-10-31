@@ -1,11 +1,20 @@
 # wgs-extend
 * 扩展包，以依赖包的方式可插拔配置到项目中，单功能单包，最大选择化集成
-## lock配置
+* wgs-extend-demo：           各依赖包使用示例
+* wgs-extend-demo-annotation：分布式锁使用-注解扫描方式加载
+* wgs-extend-demo-api：       分布式锁使用-api配置方式加载，文件服务器fdfs-api配置方式加载                        
+* wgs-extend-demo-xml：       文件服务器fdfs-配置文件方式加载
+
+
+
+## 分布式锁配置
 ### lock有zklock和redisLock两种，选择配置
 * 引入wgs-extend-lock-redis.jar或者wgs-extend-lock-zookeeper.jar
 * api配置方式：demo模块LockConfigration类配置
 * 配置扫描包路径：com.wgs.extend.lock.zk或com.wgs.extend.lock.redis
-## fdfs连接池配置
+
+
+## 文件服务器fdfs连接池配置
 * 引入wgs-extend-fdfs.jar
 * 只支持xml配置文件方式加载，配置好必要的配置项：
     wgs:

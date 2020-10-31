@@ -33,10 +33,10 @@ import java.util.Date;
 @Slf4j
 public abstract class TraceLogAspect {
 
-	@Pointcut("execution(* com.wgs.*.controller..*.*(..))")
+	@Pointcut("execution(* *..controller..*.*(..))")
 	public void controllerPointcut() {}
 
-	@Pointcut("execution(* com.wgs.*.service..*.*(..))")
+	@Pointcut("execution(* com..service..*.*(..))")
 	public void servicePointcut() {}
 
 	@Before("controllerPointcut()")

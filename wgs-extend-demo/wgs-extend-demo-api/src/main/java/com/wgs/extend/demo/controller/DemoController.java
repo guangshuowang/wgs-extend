@@ -24,10 +24,6 @@ import org.springframework.web.multipart.MultipartFile;
 @RequestMapping("/api/demo")
 public class DemoController {
 
-
-//	@Autowired
-//	private SysUserService sysUserService;
-
 	@Autowired
 	private ZKLock zkLock;
 

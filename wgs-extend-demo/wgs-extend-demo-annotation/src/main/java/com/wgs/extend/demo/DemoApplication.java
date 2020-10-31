@@ -18,7 +18,6 @@ import org.springframework.context.annotation.ImportResource;
  * @Version 1.0
  */
 @SpringBootApplication
-@ImportResource("classpath*:application-fdfs.xml")
 @ComponentScans({@ComponentScan("com.wgs.extend.lock.zk"), @ComponentScan("com.wgs.extend.lock.redis")})
 public class DemoApplication {
 

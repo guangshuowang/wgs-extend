@@ -1,0 +1,22 @@
+server:
+  port: 8082
+
+spring:
+  aop:
+    auto: true
+  application:
+    name: wgs-extend-demo-dubbo-consumer
+
+
+
+embedded:
+  zookeeper:
+    port: 2181
+
+dubbo:
+  protocol:
+    name: dubbo
+  service:
+    version: 1.0
+  registry:
+    address: zookeeper://172.20.32.252:${embedded.zookeeper.port}

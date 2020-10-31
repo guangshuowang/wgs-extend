@@ -24,25 +24,11 @@ import org.springframework.web.multipart.MultipartFile;
 @RequestMapping("/api/demo")
 public class DemoController {
 
-
-//	@Autowired
-//	private SysUserService sysUserService;
-
 	@Autowired
 	private ZKLock zkLock;
 
 	@Autowired
 	private RedisLock redisLock;
-
-	@Autowired
-	private FastDFSClient fastDFSClient;
-
-	@PostMapping("/upload")
-	public String upload(@RequestBody MultipartFile multipartFile) {
-		String upload = fastDFSClient.upload(multipartFile, null);
-		log.info("上传成功，文件路径：{}", upload);
-		return upload;
-	}
 
 	@GetMapping(value = "/lock", produces = {"application/json;charset=UTF-8"})
 	public String lock() {

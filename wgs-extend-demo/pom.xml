@@ -7,6 +7,7 @@
 		<module>wgs-extend-demo-annotation</module>
 		<module>wgs-extend-demo-xml</module>
 		<module>wgs-extend-demo-api</module>
+		<module>wgs-extend-demo-dubbo</module>
 	</modules>
 	<parent>
 		<artifactId>wgs-extend</artifactId>
