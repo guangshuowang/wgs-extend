@@ -19,4 +19,4 @@ dubbo:
   service:
     version: 1.0
   registry:
-    address: zookeeper://172.20.32.252:${embedded.zookeeper.port}
+    address: zookeeper://xxx.xxx.xxx.xxx:${embedded.zookeeper.port}

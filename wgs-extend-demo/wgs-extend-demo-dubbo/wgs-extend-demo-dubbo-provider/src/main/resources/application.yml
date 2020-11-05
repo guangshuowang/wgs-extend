@@ -21,6 +21,6 @@ dubbo:
   service:
     version: 1.0
   registry:
-    address: zookeeper://172.20.32.252:${embedded.zookeeper.port}
+    address: zookeeper://xxx.xxx.xxx.xxx:${embedded.zookeeper.port}
     # 缓存 把注册信息缓存起来， 服务重启时 保证可靠性！
     file: ${user.home}/dubbo-cache/${spring.application.name}/dubbo.cache

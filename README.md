@@ -33,7 +33,7 @@
 ````          timeBetEvicRun: 300000
 ````        fdfs:
 ````          charSet: UTF-8
-````          trackerServers: 172.20.32.252:22122,172.20.32.252:22122
+````          trackerServers: xxx.xxx.xxx.xxx:22122,xxx.xxx.xxx.xxx:22122
 ````          trackerHttpPort: 80
 ````          connectTimeout: 10000
 ````          networkTimeout: 30000
