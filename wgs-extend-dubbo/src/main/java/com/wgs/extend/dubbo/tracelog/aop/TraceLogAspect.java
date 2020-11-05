@@ -13,6 +13,9 @@ import org.aspectj.lang.annotation.After;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
 import org.aspectj.lang.annotation.Pointcut;
+import org.springframework.beans.BeansException;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.ApplicationContextAware;
 import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
 import org.springframework.util.StringUtils;
@@ -31,12 +34,12 @@ import java.util.Date;
 @Aspect
 @Component
 @Slf4j
-public abstract class TraceLogAspect {
+public class TraceLogAspect implements ApplicationContextAware {
 
 	@Pointcut("execution(* *..controller..*.*(..))")
 	public void controllerPointcut() {}
 
-	@Pointcut("execution(* com..service..*.*(..))")
+	@Pointcut("execution(* *..service..*.*(..))")
 	public void servicePointcut() {}
 
 	@Before("controllerPointcut()")
@@ -76,15 +79,34 @@ public abstract class TraceLogAspect {
 
     @After("controllerPointcut()")
     public void controllerAfter(JoinPoint point) {
-		saveControllerTraceLog(point.getTarget().getClass().getSimpleName(), point.getSignature().getName(), DateUtils.period(TraceLogThreadLocal.get()));
+		saveTraceLog(point.getTarget().getClass().getSimpleName(), point.getSignature().getName(), DateUtils.period(TraceLogThreadLocal.get()));
 		log.info("调用结束：{}-{}-{}", point.getTarget().getClass().getSimpleName(), point.getSignature().getName(), DateUtils.pastTime(TraceLogThreadLocal.get()));
     }
 
-    @After("servicePointcut()")
+	@After("servicePointcut()")
     public void serviceAfter(JoinPoint point) {
 		log.info("调用结束：{}-{}-{}", point.getTarget().getClass().getSimpleName(), point.getSignature().getName(), DateUtils.pastTime(TraceLogThreadLocal.get()));
     }
 
-	public abstract void saveControllerTraceLog(String className, String methodName, long time);
 
+	@Override
+	public void setApplicationContext(ApplicationContext applicationContext) throws BeansException {
+//		try {
+//			setActiveMqService((ActiveMqService) applicationContext.getBean("activeMqService"));
+//			log.info("完成切面属性设置：activeMqService");
+//		} catch (BeansException e) {
+//			log.warn("缺少【activeMqService】配置，不支持账户支付结果通知");
+//		}
+	}
+
+	/**
+	 *
+	 * 保存日志记录
+	 * @Author  wanggsh
+	 * @Date    2020-11-05 17:23
+	 * @Version 1.0
+	 */
+	private void saveTraceLog(String simpleName, String name, long period) {
+
+	}
 }

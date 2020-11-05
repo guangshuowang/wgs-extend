@@ -7,9 +7,10 @@
 package com.wgs.extend.dubbo.tracelog;
 
 import com.wgs.extend.common.utils.StringUtils;
+import lombok.extern.slf4j.Slf4j;
 import org.slf4j.MDC;
 
-
+@Slf4j
 public class ThreadMdcUtil {
 
     public final static String LOG_TRACE_ID = "traceId";
@@ -21,6 +22,8 @@ public class ThreadMdcUtil {
     }
 
     public static String getTraceId() {
+    	log.info("查询traceId：{}", Thread.currentThread().getName());
+    	setTraceIdIfAbsent();
         return MDC.get(LOG_TRACE_ID);
     }
 

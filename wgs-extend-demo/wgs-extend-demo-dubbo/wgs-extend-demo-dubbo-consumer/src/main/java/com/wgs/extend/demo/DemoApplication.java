@@ -29,7 +29,8 @@ import java.net.UnknownHostException;
  */
 @Slf4j
 @SpringBootApplication
-@ComponentScans({@ComponentScan("com.wgs.extend.dubbo.tracelog")})
+//@ComponentScans({@ComponentScan("com.wgs.extend.dubbo.tracelog.aop"),@ComponentScan("com.wgs.extend.dubbo.tracelog.filter")})
+@ComponentScan(basePackages = {"com.wgs.extend.dubbo.tracelog","com.wgs.extend.demo"})
 public class DemoApplication {
 
 	public static void main(String[] args) {

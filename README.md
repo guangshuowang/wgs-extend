@@ -44,5 +44,10 @@
 
 ## dubbo服务日志链路（依赖aop）
 * 引入wgs-extend-dubbo.jar
+* 启动类配置@ComponentScan(basePackages = {"com.wgs.extend.dubbo.tracelog","当前项目启动类所在包路径"})
+* 适用于dubbo微服务调用与被调用端项目，单次请求日志追踪依靠traceId
+
+
+## 多数据源切换支持
 * 
 # 正在完成中
