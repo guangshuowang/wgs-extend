@@ -2,7 +2,7 @@
  * Copyright(c) 2004-2018 eaju.com, All Rights Reserved. Project: eaju-marketing-service Author: admin Createdate:
  * 下午5:57:36 Version: 1.0
  */
-package com.eaju.extend.datasource;
+package com.wgs.extend.datasource;
 
 import lombok.extern.slf4j.Slf4j;
 

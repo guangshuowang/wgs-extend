@@ -2,12 +2,15 @@
  * Copyright(c) 2004-2018 eaju.com, All Rights Reserved. Project: eaju-marketing-service Author: admin Createdate:
  * 下午6:07:16 Version: 1.0
  */
-package com.wgs.extend.datasource;
+package com.wgs.extend.datasource.config;
 
+import com.wgs.extend.datasource.DataSourceStorage;
+import com.wgs.extend.datasource.DataSourceThreadLocal;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.BeansException;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationContextAware;
+import org.springframework.context.annotation.DependsOn;
 import org.springframework.jdbc.datasource.lookup.AbstractRoutingDataSource;
 import org.springframework.stereotype.Component;
 
@@ -25,7 +28,7 @@ import java.util.Objects;
  */
 // AbstractRoutingDataSource是模板方法模式, 由子类DynamicDataSource实现determineCurrentLookupKey方法, 返回xml文件中定义的字符串
 @Slf4j
-//@DependsOn("dataSourceStorage")
+@DependsOn("dataSourceStorage")
 @Component
 public class DynamicDataSource extends AbstractRoutingDataSource implements ApplicationContextAware {
 

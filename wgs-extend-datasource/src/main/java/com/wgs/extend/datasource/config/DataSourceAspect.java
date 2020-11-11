@@ -2,8 +2,9 @@
  * Copyright(c) 2004-2018 eaju.com, All Rights Reserved. Project: eaju-marketing-service Author: admin Createdate:
  * 下午5:47:49 Version: 1.0
  */
-package com.wgs.extend.datasource;
+package com.wgs.extend.datasource.config;
 
+import com.wgs.extend.datasource.DataSourceThreadLocal;
 import lombok.extern.slf4j.Slf4j;
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.annotation.After;
@@ -23,7 +24,7 @@ import java.util.Objects;
  * @date 2019年1月8日 下午5:47:49
  * @modified by wanggsh/2020-05-19 15:12
  */
-//@Aspect
+@Aspect
 @Slf4j
 public class DataSourceAspect {
 

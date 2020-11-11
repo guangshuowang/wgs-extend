@@ -7,5 +7,6 @@ package com.wgs.extend.demo.service;
  * @Date 2020年11月06日 16:43
  * @Version 1.0
  */
-public class DemoService {
+public interface DemoService {
+	String get(String dataSourceId);
 }

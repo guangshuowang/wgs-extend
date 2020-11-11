@@ -3,56 +3,14 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.2.xsd">
 
 	<!--数据源存储对象-->
-	<bean id="dataSourceStorage" class="com.eaju.extend.datasource.DataSourceStorage">
+	<bean id="dataSourceStorage" class="com.wgs.extend.datasource.DataSourceStorage">
 		<property name="dataSourceMap">
 			<map>
-				<entry key="wxa9a4b76906fd01bd" value-ref="xydjDataSource" />
-				<entry key="wxee127bd68b1da861" value-ref="bjxydjDataSource"/>
-				<!--<entry key="wxde507b7cec9b5937" value-ref="njxydjDataSource"/>-->
-				
-				<!--<entry key="wx06b38a42d028aaba" value-ref="jzssDataSource"/>-->
-				<!--<entry key="wxcbaa077cc3cc0af1" value-ref="dsypDataSource"/>-->
-				<!--<entry key="wx8c588361c287e808" value-ref="hcsmDataSource"/>-->
-				<!--<entry key="wx35ed06bc54145f51" value-ref="mygbDataSource"/>-->
-				<!--<entry key="wx1bc319a85e1ae256" value-ref="cdxyDataSource"/>-->
-				<!---->
-				<!--<entry key="wx71999a8ac9628f47" value-ref="ycmjDataSource"/>-->
-				<!--<entry key="wx98e285c90c443fd7" value-ref="jjsDataSource"/>-->
-				<!--<entry key="wx5e3c675a2ec80fd0" value-ref="hjjDataSource"/>-->
-				<!--<entry key="wxd57b883f6ccaaef4" value-ref="jjfDataSource"/>-->
-				<!--<entry key="wxb654cc353e57e2e8" value-ref="xxdDataSource"/>-->
-				<!---->
-				<!--<entry key="wx645714019e9549bb" value-ref="lctsDataSource"/>-->
-				<!--<entry key="wxa8320dd10e8dffaa" value-ref="hbhDataSource"/>-->
-				<!--<entry key="wx899d34dad5d843df" value-ref="dtgjDataSource"/>-->
-				<!--<entry key="wxf1c32501c4a2baf5" value-ref="jnxydjDataSource"/>-->
+				<entry key="demo1" value-ref="demo1DataSource" />
+				<entry key="demo2" value-ref="demo2DataSource"/>
 			</map>
 		</property>
 	</bean>
-	
-    <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
-        <property name="basePackage" value="com.eaju.central.mapper" />
-    </bean>
-    
-	<import resource="classpath:spring/datasource/application-datasource-xydj.xml" />
-	<import resource="classpath:spring/datasource/application-datasource-bjxydj.xml" />
-	<!--<import resource="classpath:spring/datasource/application-datasource-njxydj.xml" />-->
-	
-	<!--<import resource="classpath:spring/datasource/application-datasource-cdxydj.xml" />-->
-	<!--<import resource="classpath:spring/datasource/application-datasource-dsyp.xml" />-->
-	<!--<import resource="classpath:spring/datasource/application-datasource-hcsm.xml" />-->
-	<!--<import resource="classpath:spring/datasource/application-datasource-hjj.xml" />-->
-	<!--<import resource="classpath:spring/datasource/application-datasource-jjf.xml" />-->
-	<!---->
-	<!--<import resource="classpath:spring/datasource/application-datasource-jjs.xml" />-->
-	<!--<import resource="classpath:spring/datasource/application-datasource-jzss.xml" />-->
-	<!--<import resource="classpath:spring/datasource/application-datasource-lcts.xml" />-->
-	<!--<import resource="classpath:spring/datasource/application-datasource-mygb.xml" />-->
-	<!--<import resource="classpath:spring/datasource/application-datasource-xxd.xml" />-->
-	<!---->
-	<!--<import resource="classpath:spring/datasource/application-datasource-ycmj.xml" />-->
-	<!--<import resource="classpath:spring/datasource/application-datasource-hbh.xml" />-->
-	<!--<import resource="classpath:spring/datasource/application-datasource-dtgj.xml" />-->
-	<!--<import resource="classpath:spring/datasource/application-datasource-jnxydj.xml" />-->
-	
+	<import resource="classpath:datasource/application-datasource-demo1.xml" />
+	<import resource="classpath:datasource/application-datasource-demo2.xml" />
 </beans>

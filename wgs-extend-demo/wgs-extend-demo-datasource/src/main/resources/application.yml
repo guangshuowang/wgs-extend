@@ -2,34 +2,27 @@ server:
   port: 8080
 
 spring:
+  aop:
+    proxy-target-class: true
   application:
     name: wgs-extend-demo
 
-wgs:
-  extend:
-    object_pool:
-      minIdle: 0
-      maxIdle: 8
-      maxTotal: 32
-      testOnCreate: false
-      testOnBorrow: true
-      testOnReturn: false
-      testWhileIdle: true
-      blockWhenExhausted: true
-      maxWaitMillis: 5000
-      minEvicTime: 60000
-      timeBetEvicRun: 300000
-    fdfs:
-      charSet: UTF-8
-      trackerServers: 172.20.32.252:22122,172.20.32.252:22122
-      trackerHttpPort: 80
-      connectTimeout: 10000
-      networkTimeout: 30000
-      antiStealToken: false
-      httpSecretKey: xxx1234567890
-    lock:
-      zk:
-        url: 172.20.32.252:2181
-        lockPath: /distributed-lock/
-      redis:
-        url: redis://172.20.32.252:6379
+
+
+
+#mybatis plus 设置
+mybatis-plus:
+  mapper-locations: classpath*:com/wgs/extend/demo/mapper/xml/*Mapper.xml
+#  mapper-locations: classpath*:mybatis/xml/*Mapper.xml
+  global-config:
+    # 关闭MP3.0自带的banner
+    banner: false
+    db-config:
+      #主键类型，自增
+      id-type: AUTO
+      # 默认数据库表下划线命名
+      table-underline: true
+  configuration:
+    # 这个配置会将执行的sql打印出来，在开发或测试的时候可以用
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+
