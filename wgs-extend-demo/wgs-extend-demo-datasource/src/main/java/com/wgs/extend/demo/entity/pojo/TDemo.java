@@ -14,7 +14,7 @@ import java.io.Serializable;
  */
 @Getter
 @Setter
-public class Demo implements Serializable {
+public class TDemo implements Serializable {
 
 	private Integer id;
 	private String name;

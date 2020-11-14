@@ -2,7 +2,6 @@ package com.wgs.extend.demo.controller;
 
 import com.wgs.extend.demo.service.DemoService;
 import lombok.extern.slf4j.Slf4j;
-import org.apache.ibatis.annotations.Param;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -24,8 +23,13 @@ public class DemoController {
 	@Autowired
 	private DemoService demoService;
 
+//	@Autowired
+//	private DemoMapper demoMapper;
+
 	@GetMapping("/get/{id}")
 	public String getDemo(@PathVariable String id) {
+//		TDemo select = demoMapper.selectById(1);
+//		System.out.println(select.toString());
 		return demoService.get(id);
 	}
 }

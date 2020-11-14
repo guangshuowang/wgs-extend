@@ -1,12 +1,12 @@
 package com.wgs.extend.demo.service.impl;
 
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
-import com.wgs.extend.demo.entity.pojo.Demo;
+import com.wgs.extend.demo.entity.pojo.TDemo;
 import com.wgs.extend.demo.mapper.DemoMapper;
 import com.wgs.extend.demo.service.DemoService;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 /**
  * @Description
@@ -17,15 +17,17 @@ import org.springframework.stereotype.Service;
  */
 @Slf4j
 @Service
-public class DemoServiceImpl extends ServiceImpl<DemoMapper, Demo> implements DemoService {
+public class DemoServiceImpl extends ServiceImpl<DemoMapper, TDemo> implements DemoService {
 
 //	@Autowired
 //	private DemoMapper demoMapper;
 
 	@Override
+	@Transactional
 	public String get(String dataSourceId) {
 		log.info("查询数据库：{}", dataSourceId);
-		Demo select = baseMapper.select(1);
+//		TDemo select = demoMapper.select(1);
+		TDemo select = baseMapper.selectById(1);
 		return select == null ? "" : select.toString();
 	}
 }

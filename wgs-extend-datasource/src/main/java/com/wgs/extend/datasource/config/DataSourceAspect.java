@@ -12,6 +12,9 @@ import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
 import org.aspectj.lang.annotation.Pointcut;
 import org.aspectj.lang.reflect.MethodSignature;
+import org.springframework.core.annotation.Order;
+import org.springframework.stereotype.Component;
+
 import java.lang.reflect.Method;
 import java.util.Objects;
 
@@ -24,15 +27,17 @@ import java.util.Objects;
  * @date 2019年1月8日 下午5:47:49
  * @modified by wanggsh/2020-05-19 15:12
  */
+@Order(value = 1)
 @Aspect
 @Slf4j
+@Component
 public class DataSourceAspect {
 
 	/*满足包路径*/
 	@Pointcut("execution(* *..service.impl..*.*(..))")
 	public void servicePackageAspect() {}
 	/*满足注解*/
-	@Pointcut("@annotation(com.wgs.extend.common.annotation.NoStatus))")
+	@Pointcut("!@annotation(com.wgs.extend.common.annotation.NoStatus))")
 	public void serviceAnnotationAspect() {}
 
 
@@ -58,7 +63,7 @@ public class DataSourceAspect {
 	 * @Date    2020-11-06 10:18
 	 * @Version 1.0
 	 */
-	@Before("servicePackageAspect() && !serviceAnnotationAspect()")
+	@Before("servicePackageAspect() && serviceAnnotationAspect()")
     public void before(JoinPoint point) {
 		String[] parameterNames = ((MethodSignature) point.getSignature()).getParameterNames();
 		Object[] args = point.getArgs();

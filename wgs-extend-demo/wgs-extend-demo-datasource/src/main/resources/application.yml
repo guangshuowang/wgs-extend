@@ -4,6 +4,7 @@ server:
 spring:
   aop:
     proxy-target-class: true
+    auto: true
   application:
     name: wgs-extend-demo
 
@@ -12,8 +13,8 @@ spring:
 
 #mybatis plus 设置
 mybatis-plus:
-  mapper-locations: classpath*:com/wgs/extend/demo/mapper/xml/*Mapper.xml
-#  mapper-locations: classpath*:mybatis/xml/*Mapper.xml
+#  mapper-locations: classpath*:com/wgs/extend/demo/mapper/xml/*Mapper.xml
+  mapper-locations: classpath*:mybatis/xml/*Mapper.xml
   global-config:
     # 关闭MP3.0自带的banner
     banner: false

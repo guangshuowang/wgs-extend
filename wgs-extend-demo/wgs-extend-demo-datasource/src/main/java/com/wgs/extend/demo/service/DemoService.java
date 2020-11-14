@@ -8,5 +8,6 @@ package com.wgs.extend.demo.service;
  * @Version 1.0
  */
 public interface DemoService {
+
 	String get(String dataSourceId);
 }

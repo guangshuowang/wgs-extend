@@ -1,7 +1,8 @@
 package com.wgs.extend.demo.mapper;
 
+
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
-import com.wgs.extend.demo.entity.pojo.Demo;
+import com.wgs.extend.demo.entity.pojo.TDemo;
 
 /**
  * @Description
@@ -9,8 +10,8 @@ import com.wgs.extend.demo.entity.pojo.Demo;
  * @Date 2020-11-06
  * @Version 1.0
  */
-public interface DemoMapper extends BaseMapper<Demo> {
+public interface DemoMapper extends BaseMapper<TDemo> {
 
-//	Integer insert(Demo demo);
-	Demo select(Integer id);
+//	Integer insert(TDemo demo);
+//	TDemo select(Integer id);
 }
