@@ -3,7 +3,9 @@ package com.wgs.extend.dubbo.tracelog.filter;
 import com.wgs.extend.common.utils.DateUtils;
 import com.wgs.extend.dubbo.tracelog.ThreadMdcUtil;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.dubbo.common.constants.CommonConstants;
 import org.apache.dubbo.common.extension.Activate;
+import org.apache.dubbo.rpc.Constants;
 import org.apache.dubbo.rpc.Filter;
 import org.apache.dubbo.rpc.Invocation;
 import org.apache.dubbo.rpc.Invoker;
@@ -22,7 +24,7 @@ import java.util.Date;
  * @Version 1.0
  */
 @Slf4j
-@Activate
+@Activate(group = CommonConstants.CONSUMER)
 public class DubboConsumerContextFilter implements Filter {
 
 	@Override

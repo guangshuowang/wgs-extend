@@ -1,7 +1,9 @@
 package com.wgs.extend.dubbo.tracelog.filter;
 
 import com.wgs.extend.dubbo.tracelog.ThreadMdcUtil;
+import org.apache.dubbo.common.constants.CommonConstants;
 import org.apache.dubbo.common.extension.Activate;
+import org.apache.dubbo.rpc.Constants;
 import org.apache.dubbo.rpc.Filter;
 import org.apache.dubbo.rpc.Invocation;
 import org.apache.dubbo.rpc.Invoker;
@@ -17,7 +19,7 @@ import org.apache.dubbo.rpc.RpcException;
  * @Version 1.0
  */
 //@Slf4j
-@Activate
+@Activate(group = CommonConstants.PROVIDER)
 public class DubboProviderContextFilter implements Filter {
 
 	@Override

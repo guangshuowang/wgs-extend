@@ -22,8 +22,8 @@ public class ThreadMdcUtil {
     }
 
     public static String getTraceId() {
-    	log.info("查询traceId：{}", Thread.currentThread().getName());
     	setTraceIdIfAbsent();
+    	log.info("查询traceId：{}", Thread.currentThread().getName());
         return MDC.get(LOG_TRACE_ID);
     }
 
