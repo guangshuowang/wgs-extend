@@ -8,7 +8,7 @@
 
 
 ## 分布式锁配置
-### lock有zklock和redisLock两种，选择配置
+### lock有zkLock和redisLock两种，选择配置
 * 引入wgs-extend-lock-redis.jar或者wgs-extend-lock-zookeeper.jar
 * api配置方式：demo模块LockConfigration类配置
 * 配置扫描包路径：com.wgs.extend.lock.zk或com.wgs.extend.lock.redis
